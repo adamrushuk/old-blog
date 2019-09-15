@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+
+	>
+<channel>
+	<title>
+	Comments on: Installing SQL Server 2008 R2 on a Failover Cluster using Server 2008 R2	</title>
+	<atom:link href="http://thehypepipe.co.uk/installing-sql-server-2008-r2-on-a-failover-cluster-using-server-2008-r2/feed/" rel="self" type="application/rss+xml" />
+	<link>http://thehypepipe.co.uk/installing-sql-server-2008-r2-on-a-failover-cluster-using-server-2008-r2/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=installing-sql-server-2008-r2-on-a-failover-cluster-using-server-2008-r2</link>
+	<description>Tips, thoughts and notes from the world of IT</description>
+	<lastBuildDate>Sat, 22 Sep 2012 11:35:44 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.2.3</generator>
+			<item>
+				<title>
+				By: Adam Rush				</title>
+				<link>http://thehypepipe.co.uk/installing-sql-server-2008-r2-on-a-failover-cluster-using-server-2008-r2/#comment-2929</link>
+		<dc:creator><![CDATA[Adam Rush]]></dc:creator>
+		<pubDate>Sat, 22 Sep 2012 11:35:44 +0000</pubDate>
+		<guid isPermaLink="false">http://thehypepipe.co.uk/?p=1373#comment-2929</guid>
+					<description><![CDATA[Hi Pranay
+
+The answer to your question is &#039;both&#039;. I first created all the volumes in FreeNAS, then connected them to both nodes via iSCSI. Only one node at a time can have write access to the volumes.
+
+See my previous post and follow the links to see how I set everything up: http://thehypepipe.co.uk/configure-a-failover-cluster-using-server-2008-r2/ 
+
+Let me know if you get stuck and I&#039;ll be happy to help :-)
+
+Adam]]></description>
+		<content:encoded><![CDATA[<p>Hi Pranay</p>
+<p>The answer to your question is &#8216;both&#8217;. I first created all the volumes in FreeNAS, then connected them to both nodes via iSCSI. Only one node at a time can have write access to the volumes.</p>
+<p>See my previous post and follow the links to see how I set everything up: <a href="http://thehypepipe.co.uk/configure-a-failover-cluster-using-server-2008-r2/" rel="nofollow">http://thehypepipe.co.uk/configure-a-failover-cluster-using-server-2008-r2/</a> </p>
+<p>Let me know if you get stuck and I&#8217;ll be happy to help 🙂</p>
+<p>Adam</p>
+]]></content:encoded>
+						</item>
+						<item>
+				<title>
+				By: Pranay				</title>
+				<link>http://thehypepipe.co.uk/installing-sql-server-2008-r2-on-a-failover-cluster-using-server-2008-r2/#comment-2928</link>
+		<dc:creator><![CDATA[Pranay]]></dc:creator>
+		<pubDate>Sat, 22 Sep 2012 10:33:54 +0000</pubDate>
+		<guid isPermaLink="false">http://thehypepipe.co.uk/?p=1373#comment-2928</guid>
+					<description><![CDATA[is all the disks mention in screenshot 1 is CSV disks...]]></description>
+		<content:encoded><![CDATA[<p>is all the disks mention in screenshot 1 is CSV disks&#8230;</p>
+]]></content:encoded>
+						</item>
+						<item>
+				<title>
+				By: Pranay				</title>
+				<link>http://thehypepipe.co.uk/installing-sql-server-2008-r2-on-a-failover-cluster-using-server-2008-r2/#comment-2926</link>
+		<dc:creator><![CDATA[Pranay]]></dc:creator>
+		<pubDate>Sat, 22 Sep 2012 09:16:10 +0000</pubDate>
+		<guid isPermaLink="false">http://thehypepipe.co.uk/?p=1373#comment-2926</guid>
+					<description><![CDATA[Hi adam,
+there is a question in my mind, in point 16 you have mentioned about disk configuration &#038; user database directory &#038; system database directory was stored in S drive.
+is S drive a shared drive present in one of the node of the cluster or is it the volume created in FreeNAS.
+and where we are using the FreeNAS volume ?
+according to my understanding there should be a shared drive in the nodes which will hold the DB.]]></description>
+		<content:encoded><![CDATA[<p>Hi adam,<br />
+there is a question in my mind, in point 16 you have mentioned about disk configuration &amp; user database directory &amp; system database directory was stored in S drive.<br />
+is S drive a shared drive present in one of the node of the cluster or is it the volume created in FreeNAS.<br />
+and where we are using the FreeNAS volume ?<br />
+according to my understanding there should be a shared drive in the nodes which will hold the DB.</p>
+]]></content:encoded>
+						</item>
+						<item>
+				<title>
+				By: Pranay				</title>
+				<link>http://thehypepipe.co.uk/installing-sql-server-2008-r2-on-a-failover-cluster-using-server-2008-r2/#comment-2917</link>
+		<dc:creator><![CDATA[Pranay]]></dc:creator>
+		<pubDate>Fri, 21 Sep 2012 13:07:55 +0000</pubDate>
+		<guid isPermaLink="false">http://thehypepipe.co.uk/?p=1373#comment-2917</guid>
+					<description><![CDATA[hi adam,
+Great post...
+this is what i was searching for ....
+
+thanks
+Pranay]]></description>
+		<content:encoded><![CDATA[<p>hi adam,<br />
+Great post&#8230;<br />
+this is what i was searching for &#8230;.</p>
+<p>thanks<br />
+Pranay</p>
+]]></content:encoded>
+						</item>
+			</channel>
+</rss>

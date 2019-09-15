@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Speed up DHCP delays with Portfast on Cisco switches and routers - Virtually Impossible</title><meta property="og:locale" content="en_GB"><meta property="og:type" content="article"><meta property="og:title" content="Speed up DHCP delays with Portfast on Cisco switches and routers - Virtually Impossible"><meta property="og:description" content="Scenario You have noticed that it takes ages for client devices – like PCs, VOIP phones, even Xboxs – to get an IP address via DHCP. Sometimes an IP address is not given at all. Here is how to speed up the DHCP process on Cisco switches and routers: Solution Simply select the range of ports …"><meta property="og:url" content="http://thehypepipe.co.uk/speed-up-dhcp-delays-with-portfast-on-cisco-switches-and-routers/"><meta property="og:site_name" content="Virtually Impossible"><meta property="article:tag" content="Cisco IOS"><meta property="article:section" content="Cisco"><meta property="article:published_time" content="2012-04-30T20:12:15+00:00"><meta property="article:modified_time" content="2012-07-15T12:12:50+00:00"><meta property="og:updated_time" content="2012-07-15T12:12:50+00:00"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:description" content="Scenario You have noticed that it takes ages for client devices – like PCs, VOIP phones, even Xboxs – to get an IP address via DHCP. Sometimes an IP address is not given at all. Here is how to speed up the DHCP process on Cisco switches and routers: Solution Simply select the range of ports […]"><meta name="twitter:title" content="Speed up DHCP delays with Portfast on Cisco switches and routers - Virtually Impossible"><meta name="twitter:site" content="@adamrushuk"><meta name="twitter:creator" content="@adamrushuk"><script type="application/ld+json" class="yoast-schema-graph yoast-schema-graph--main">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"http://thehypepipe.co.uk/#website","url":"http://thehypepipe.co.uk/","name":"Virtually Impossible","publisher":{"@id":"http://thehypepipe.co.uk/#person"},"potentialAction":{"@type":"SearchAction","target":"http://thehypepipe.co.uk/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"http://thehypepipe.co.uk/speed-up-dhcp-delays-with-portfast-on-cisco-switches-and-routers/#webpage","url":"http://thehypepipe.co.uk/speed-up-dhcp-delays-with-portfast-on-cisco-switches-and-routers/","inLanguage":"en-GB","name":"Speed up DHCP delays with Portfast on Cisco switches and routers - Virtually Impossible","isPartOf":{"@id":"http://thehypepipe.co.uk/#website"},"datePublished":"2012-04-30T20:12:15+00:00","dateModified":"2012-07-15T12:12:50+00:00"},{"@type":"Article","@id":"http://thehypepipe.co.uk/speed-up-dhcp-delays-with-portfast-on-cisco-switches-and-routers/#article","isPartOf":{"@id":"http://thehypepipe.co.uk/speed-up-dhcp-delays-with-portfast-on-cisco-switches-and-routers/#webpage"},"author":{"@id":"http://thehypepipe.co.uk/author/adminn101/#author","name":"Adam Rush"},"publisher":{"@id":"http://thehypepipe.co.uk/#person"},"headline":"Speed up DHCP delays with Portfast on Cisco switches and routers","datePublished":"2012-04-30T20:12:15+00:00","dateModified":"2012-07-15T12:12:50+00:00","commentCount":"1","mainEntityOfPage":"http://thehypepipe.co.uk/speed-up-dhcp-delays-with-portfast-on-cisco-switches-and-routers/#webpage","keywords":"Cisco IOS","articleSection":"Cisco"},{"@type":"Person","@id":"http://thehypepipe.co.uk/author/adminn101/#author","name":"Adam Rush","image":{"@type":"ImageObject","@id":"http://thehypepipe.co.uk/#personlogo","url":"http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g","caption":"Adam Rush"},"description":"Passionate geek.","sameAs":[]}]}</script><link rel="dns-prefetch" href="//s0.wp.com"><link rel="dns-prefetch" href="//secure.gravatar.com"><link rel="dns-prefetch" href="//s.w.org"><script type="text/javascript" data-cfasync="false">
+	var mi_version         = '7.6.0';
+	var mi_track_user      = true;
+	var mi_no_track_reason = '';
+	
+	var disableStr = 'ga-disable-UA-28931764-1';
+
+	/* Function to detect opted out users */
+	function __gaTrackerIsOptedOut() {
+		return document.cookie.indexOf(disableStr + '=true') > -1;
+	}
+
+	/* Disable tracking if the opt-out cookie exists. */
+	if ( __gaTrackerIsOptedOut() ) {
+		window[disableStr] = true;
+	}
+
+	/* Opt-out function */
+	function __gaTrackerOptout() {
+	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+	  window[disableStr] = true;
+	}
+	
+	if ( mi_track_user ) {
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+		__gaTracker('create', 'UA-28931764-1', 'auto');
+		__gaTracker('set', 'forceSSL', true);
+		__gaTracker('require', 'displayfeatures');
+		__gaTracker('send','pageview');
+	} else {
+		console.log( "" );
+		(function() {
+			/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+			var noopfn = function() {
+				return null;
+			};
+			var noopnullfn = function() {
+				return null;
+			};
+			var Tracker = function() {
+				return null;
+			};
+			var p = Tracker.prototype;
+			p.get = noopfn;
+			p.set = noopfn;
+			p.send = noopfn;
+			var __gaTracker = function() {
+				var len = arguments.length;
+				if ( len === 0 ) {
+					return;
+				}
+				var f = arguments[len-1];
+				if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+					console.log( 'Not running function __gaTracker(' + arguments[0] + " ....) because you are not being tracked. " + mi_no_track_reason );
+					return;
+				}
+				try {
+					f.hitCallback();
+				} catch (ex) {
+
+				}
+			};
+			__gaTracker.create = function() {
+				return new Tracker();
+			};
+			__gaTracker.getByName = noopnullfn;
+			__gaTracker.getAll = function() {
+				return [];
+			};
+			__gaTracker.remove = noopfn;
+			window['__gaTracker'] = __gaTracker;
+					})();
+		}
+</script><link rel="stylesheet" id="yarppWidgetCss-css" href="http://thehypepipe.co.uk/wp-content/plugins/yet-another-related-posts-plugin/style/widget.css" type="text/css" media="all"><link rel="stylesheet" id="enterprise-theme-css" href="http://thehypepipe.co.uk/wp-content/themes/enterprise/style.css" type="text/css" media="all"><link rel="stylesheet" id="wp-block-library-css" href="http://thehypepipe.co.uk/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all"><link rel="stylesheet" id="yarppRelatedCss-css" href="http://thehypepipe.co.uk/wp-content/plugins/yet-another-related-posts-plugin/style/related.css" type="text/css" media="all"><link rel="stylesheet" id="social-logos-css" href="http://thehypepipe.co.uk/wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css" type="text/css" media="all"><link rel="stylesheet" id="jetpack_css-css" href="http://thehypepipe.co.uk/wp-content/plugins/jetpack/css/jetpack.css" type="text/css" media="all"><script type="text/javascript">
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,exe,js,pdf,ppt,tgz,zip,xls","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"http:\/\/PLACEHOLDER.wpsho","hash_tracking":"false"};
+/* ]]> */
+</script><script type="text/javascript" src="http://thehypepipe.co.uk/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend.min.js"></script><script type="text/javascript" src="http://thehypepipe.co.uk/wp-includes/js/jquery/jquery.js"></script><script type="text/javascript" src="http://thehypepipe.co.uk/wp-includes/js/jquery/jquery-migrate.min.js"></script><link rel="dns-prefetch" href="//v0.wordpress.com"><link rel="dns-prefetch" href="//jetpack.wordpress.com"><link rel="dns-prefetch" href="//s0.wp.com"><link rel="dns-prefetch" href="//s1.wp.com"><link rel="dns-prefetch" href="//s2.wp.com"><link rel="dns-prefetch" href="//public-api.wordpress.com"><link rel="dns-prefetch" href="//0.gravatar.com"><link rel="dns-prefetch" href="//1.gravatar.com"><link rel="dns-prefetch" href="//2.gravatar.com"><link rel="dns-prefetch" href="//i0.wp.com"><link rel="dns-prefetch" href="//i1.wp.com"><link rel="dns-prefetch" href="//i2.wp.com"><link rel="icon" href="http://thehypepipe.co.uk/wp-content/themes/enterprise/images/favicon.ico"><style type="text/css">#header { background: url(http://thehypepipe.co.uk/wp-content/themes/enterprise/images/header.png) no-repeat !important; }</style><style type="text/css" id="syntaxhighlighteranchor"></style></head><body class="post-template-default single single-post postid-501 single-format-standard header-full-width content-sidebar"><div id="wrap"><div id="header"><div class="wrap"><div id="title-area"><p id="title"><a href="http://thehypepipe.co.uk/">Virtually Impossible</a></p><p id="description">Tips, thoughts and notes from the world of IT</p></div></div></div><div id="nav"><div class="wrap"><ul id="menu-1st-navbar" class="menu genesis-nav-menu menu-primary js-superfish"><li id="menu-item-437" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-437"><a href="http://thehypepipe.co.uk/">Home</a></li>
+<li id="menu-item-438" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-438"><a href="http://thehypepipe.co.uk/about/">About</a></li>
+<li id="menu-item-2265" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2265"><a href="http://thehypepipe.co.uk/contact/">Contact</a></li>
+<li class="right search"><form method="get" class="searchform search-form" action="http://thehypepipe.co.uk/" role="search"><input type="text" value="Search this website …" name="s" class="s search-input" onfocus="if ('Search this website …' === this.value) {this.value = '';}" onblur="if ('' === this.value) {this.value = 'Search this website …';}"><input type="submit" class="searchsubmit search-submit" value="Search"></form></li></ul></div></div><div id="subnav"><div class="wrap"><ul id="menu-categories-navbar" class="menu genesis-nav-menu menu-secondary js-superfish"><li id="menu-item-472" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-472"><a href="http://thehypepipe.co.uk/category/cisco/">Cisco</a></li>
+<li id="menu-item-1169" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1169"><a href="http://thehypepipe.co.uk/category/citrix/">Citrix</a></li>
+<li id="menu-item-473" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-473"><a href="http://thehypepipe.co.uk/category/microsoft/">Microsoft</a>
+<ul class="sub-menu"><li id="menu-item-474" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-474"><a href="http://thehypepipe.co.uk/category/microsoft/exchange/">Exchange</a></li>
+	<li id="menu-item-1365" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1365"><a href="http://thehypepipe.co.uk/category/microsoft/sql-server/">SQL Server</a></li>
+</ul></li>
+<li id="menu-item-760" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-760"><a href="http://thehypepipe.co.uk/category/misc/">Misc</a>
+<ul class="sub-menu"><li id="menu-item-581" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-581"><a href="http://thehypepipe.co.uk/category/mobile/">Mobile</a></li>
+	<li id="menu-item-476" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-476"><a href="http://thehypepipe.co.uk/category/printing/">Printing</a></li>
+	<li id="menu-item-477" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-477"><a href="http://thehypepipe.co.uk/category/productivity/">Productivity</a></li>
+	<li id="menu-item-478" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-478"><a href="http://thehypepipe.co.uk/category/programming/">Programming</a></li>
+</ul></li>
+<li id="menu-item-475" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-475"><a href="http://thehypepipe.co.uk/category/networking/">Networking</a></li>
+<li id="menu-item-757" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-757"><a href="http://thehypepipe.co.uk/category/storage/">Storage</a></li>
+<li id="menu-item-480" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-480"><a href="http://thehypepipe.co.uk/category/vmware/">VMware</a>
+<ul class="sub-menu"><li id="menu-item-479" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-479"><a href="http://thehypepipe.co.uk/category/veeam/">Veeam</a></li>
+</ul></li>
+</ul></div></div><div id="inner"><div id="content-sidebar-wrap"><div id="content" class="hfeed"><div class="post-501 post type-post status-publish format-standard hentry category-cisco tag-cisco-ios entry"><h1 class="entry-title">Speed up DHCP delays with Portfast on Cisco switches and routers</h1>
+<div class="post-info"><span class="date published time" title="2012-04-30T20:12:15+00:00">30 April 2012</span>  by <span class="author vcard"><span class="fn"><a href="http://thehypepipe.co.uk/author/adminn101/" rel="author">Adam Rush</a></span></span>  </div><div class="entry-content"><h2>Scenario</h2>
+<p>You have noticed that it takes ages for client devices – like PCs, VOIP phones, even Xboxs – to get an IP address via DHCP. Sometimes an IP address is not given at all.</p>
+<p>Here is how to speed up the DHCP process on Cisco switches and routers:</p>
+<p><span id="more-501"></span></p>
+<h2>Solution</h2>
+<p>Simply select the range of ports you want to affect, then enable portfast:</p>
+<pre class="brush: plain; title: ; notranslate" title="">Switch# conf t
+Switch(config)# interface range fa0/3 - 48
+Switch(config-if-range)# spanning-tree portfast
+</pre>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><div class="sd-content"><ul><li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-501" class="share-linkedin sd-button share-icon" href="http://thehypepipe.co.uk/speed-up-dhcp-delays-with-portfast-on-cisco-switches-and-routers/" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-501" class="share-twitter sd-button share-icon" href="http://thehypepipe.co.uk/speed-up-dhcp-delays-with-portfast-on-cisco-switches-and-routers/" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li><a href="#" class="sharing-anchor sd-button share-more"><span>More</span></a></li><li class="share-end"></ul><div class="sharing-hidden"><div class="inner" style="display: none;"><ul><li class="share-reddit"><a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="http://thehypepipe.co.uk/speed-up-dhcp-delays-with-portfast-on-cisco-switches-and-routers/" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a></li><li class="share-print"><a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon" href="http://thehypepipe.co.uk/speed-up-dhcp-delays-with-portfast-on-cisco-switches-and-routers/#print" target="_blank" title="Click to print"><span>Print</span></a></li><li class="share-end"><li class="share-tumblr"><a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon" href="http://thehypepipe.co.uk/speed-up-dhcp-delays-with-portfast-on-cisco-switches-and-routers/" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a></li><li class="share-email"><a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="http://thehypepipe.co.uk/speed-up-dhcp-delays-with-portfast-on-cisco-switches-and-routers/" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-end"><li class="share-pinterest"><a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-501" class="share-pinterest sd-button share-icon" href="http://thehypepipe.co.uk/speed-up-dhcp-delays-with-portfast-on-cisco-switches-and-routers/" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-501" class="share-facebook sd-button share-icon" href="http://thehypepipe.co.uk/speed-up-dhcp-delays-with-portfast-on-cisco-switches-and-routers/" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li class="share-end"><li class="share-end"></ul></div></div></div></div></div><div class="yarpp-related">
+<p><strong>Related Posts:</strong></p><ol><li><a href="http://thehypepipe.co.uk/initial-configuration-for-cisco-routers/" rel="bookmark" title="Initial configuration for Cisco routers">Initial configuration for Cisco routers </a></li>
+<li><a href="http://thehypepipe.co.uk/cisco-command-line-shortcuts/" rel="bookmark" title="Cisco Command Line Shortcuts">Cisco Command Line Shortcuts </a></li>
+<li><a href="http://thehypepipe.co.uk/cisco-adsl-firmware-upgrade-and-debugging/" rel="bookmark" title="Cisco ADSL firmware upgrade and debugging">Cisco ADSL firmware upgrade and debugging </a></li>
+</ol></div>
+
+</div><div class="post-meta"><span class="categories">Filed Under: <a href="http://thehypepipe.co.uk/category/cisco/" rel="category tag">Cisco</a></span> <span class="tags">Tagged With: <a href="http://thehypepipe.co.uk/tag/cisco-ios/" rel="tag">Cisco IOS</a></span></div></div><div id="comments"><h3>Comments</h3><ol class="comment-list"><li class="comment even thread-even depth-1" id="comment-3726">
+
+		
+		<div class="comment-header">
+			<div class="comment-author vcard">
+				<img alt="" src="https://1.gravatar.com/avatar/40675c91e422ff74e557b6a8b4826bd3?s=48&d=identicon&r=g" srcset="http://1.gravatar.com/avatar/40675c91e422ff74e557b6a8b4826bd3?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn">Mike O'Connor</cite>
+				<span class="says">
+				says				</span>
+			</div>
+
+			<div class="comment-meta commentmetadata">
+				<a href="http://thehypepipe.co.uk/speed-up-dhcp-delays-with-portfast-on-cisco-switches-and-routers/#comment-3726">9 April 2014 at 13:07</a>
+							</div>
+		</div>
+
+		<div class="comment-content">
+			
+			<p>Hi,</p>
+<p>Technically you’re not speeding up DHCP here, you’re making a shortcut in spanning-tree.  Without portfast, even a host with a statically assigned IP address would be faced with a delay before being able to join the network.</p>
+<p>Regards,<br>
+Mike.</p>
+		</div>
+
+		<div class="reply">
+					</div>
+
+		</li>
+</ol></div></div><div id="sidebar" class="sidebar widget-area"><div id="wpcom_social_media_icons_widget-3" class="widget widget_wpcom_social_media_icons_widget"><div class="widget-wrap"><h4 class="widget-title widgettitle">Social</h4>
+<ul><li><a href="https://twitter.com/adamrushuk/" class="genericon genericon-twitter" target="_blank"><span class="screen-reader-text">View adamrushuk’s profile on Twitter</span></a></li><li><a href="https://www.linkedin.com/in/adamrushuk/" class="genericon genericon-linkedin" target="_blank"><span class="screen-reader-text">View adamrushuk’s profile on LinkedIn</span></a></li><li><a href="https://github.com/adamrushuk/" class="genericon genericon-github" target="_blank"><span class="screen-reader-text">View adamrushuk’s profile on GitHub</span></a></li></ul></div></div>
+<div id="media_image-2" class="widget widget_media_image"><div class="widget-wrap"><h4 class="widget-title widgettitle">Certifications</h4>
+<img width="181" height="300" src="http://thehypepipe.co.uk/wp-content/uploads/2016/07/cert-logos-181x300.png" class="image wp-image-4877 alignnone attachment-0x0 size-0x0" alt="Certifications" style="max-width: 100%; height: auto;" srcset="https://i0.wp.com/www.virtuallyimpossible.co.uk/wp-content/uploads/2016/07/cert-logos.png?resize=181%2C300 181w,https://i0.wp.com/www.virtuallyimpossible.co.uk/wp-content/uploads/2016/07/cert-logos.png?w=255 255w" sizes="(max-width: 181px) 100vw, 181px"></div></div>
+		<div id="recent-posts-2" class="widget widget_recent_entries"><div class="widget-wrap">		<h4 class="widget-title widgettitle">Recent Posts</h4>
+		<ul><li>
+					<a href="http://thehypepipe.co.uk/new-blog-github-pages-jekyll/">New Blog – GitHub Pages and Jekyll</a>
+									</li>
+											<li>
+					<a href="http://thehypepipe.co.uk/commands-troubleshoot-connectivity-vshield-edge/">Commands to troubleshoot connectivity through a vShield Edge</a>
+									</li>
+											<li>
+					<a href="http://thehypepipe.co.uk/commands-troubleshoot-connectivity-cisco-asa/">Commands to troubleshoot connectivity through a Cisco ASA</a>
+									</li>
+											<li>
+					<a href="http://thehypepipe.co.uk/virtualisation-podcasts-keeping-finger-pulse/">Virtualisation Podcasts – Keeping your finger on the Pulse</a>
+									</li>
+											<li>
+					<a href="http://thehypepipe.co.uk/find-upgradeable-vshield-edges/">Find Upgradeable vShield Edges</a>
+									</li>
+					</ul></div></div>
+<div id="wppp-2" class="widget widget_wppp"><div class="widget-wrap"><h4 class="widget-title widgettitle">Popular Posts</h4>
+
+<ul class="wppp_list"><li><a href="http://thehypepipe.co.uk/when-good-domain-controllers-go-bad/" title="When good Domain Controllers go bad!">When good Domain Controllers go bad!</a></li>
+	<li><a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/" title="Deploying UltraVNC within an Active Directory environment using Group Policy">Deploying UltraVNC within an Active Directory environment using Group Policy</a></li>
+	<li><a href="http://thehypepipe.co.uk/install-and-configure-profile-management-for-citrix-xenapp-6-5/" title="Install and Configure Profile Management for Citrix XenApp 6.5">Install and Configure Profile Management for Citrix XenApp 6.5</a></li>
+	<li><a href="http://thehypepipe.co.uk/configure-web-interface-for-citrix-xenapp-6-5/" title="Configure Web Interface for Citrix XenApp 6.5">Configure Web Interface for Citrix XenApp 6.5</a></li>
+	<li><a href="http://thehypepipe.co.uk/configure-pass-through-authentication-for-citrix-xenapp-6-5/" title="Configure Pass-through Authentication for Citrix XenApp 6.5">Configure Pass-through Authentication for Citrix XenApp 6.5</a></li>
+</ul></div></div>
+<div id="tag_cloud-2" class="widget widget_tag_cloud"><div class="widget-wrap"><h4 class="widget-title widgettitle">Tags</h4>
+<div class="tagcloud"><a href="http://thehypepipe.co.uk/tag/active-directory/" class="tag-cloud-link tag-link-8 tag-link-position-1" style="font-size: 19.2pt;" aria-label="Active Directory (15 items)">Active Directory</a>
+<a href="http://thehypepipe.co.uk/tag/backup/" class="tag-cloud-link tag-link-27 tag-link-position-2" style="font-size: 17.333333333333pt;" aria-label="Backup (11 items)">Backup</a>
+<a href="http://thehypepipe.co.uk/tag/batch-file/" class="tag-cloud-link tag-link-9 tag-link-position-3" style="font-size: 12.666666666667pt;" aria-label="Batch file (5 items)">Batch file</a>
+<a href="http://thehypepipe.co.uk/tag/certificates/" class="tag-cloud-link tag-link-79 tag-link-position-4" style="font-size: 11.422222222222pt;" aria-label="Certificates (4 items)">Certificates</a>
+<a href="http://thehypepipe.co.uk/tag/cisco-ios/" class="tag-cloud-link tag-link-10 tag-link-position-5" style="font-size: 12.666666666667pt;" aria-label="Cisco IOS (5 items)">Cisco IOS</a>
+<a href="http://thehypepipe.co.uk/tag/clustering/" class="tag-cloud-link tag-link-89 tag-link-position-6" style="font-size: 9.8666666666667pt;" aria-label="Clustering (3 items)">Clustering</a>
+<a href="http://thehypepipe.co.uk/tag/command/" class="tag-cloud-link tag-link-55 tag-link-position-7" style="font-size: 12.666666666667pt;" aria-label="command (5 items)">command</a>
+<a href="http://thehypepipe.co.uk/tag/deployment/" class="tag-cloud-link tag-link-69 tag-link-position-8" style="font-size: 11.422222222222pt;" aria-label="Deployment (4 items)">Deployment</a>
+<a href="http://thehypepipe.co.uk/tag/disaster-recovery/" class="tag-cloud-link tag-link-28 tag-link-position-9" style="font-size: 15.311111111111pt;" aria-label="Disaster Recovery (8 items)">Disaster Recovery</a>
+<a href="http://thehypepipe.co.uk/tag/error/" class="tag-cloud-link tag-link-22 tag-link-position-10" style="font-size: 17.8pt;" aria-label="Error (12 items)">Error</a>
+<a href="http://thehypepipe.co.uk/tag/event-id/" class="tag-cloud-link tag-link-21 tag-link-position-11" style="font-size: 8pt;" aria-label="Event ID (2 items)">Event ID</a>
+<a href="http://thehypepipe.co.uk/tag/event-log/" class="tag-cloud-link tag-link-23 tag-link-position-12" style="font-size: 12.666666666667pt;" aria-label="Event Log (5 items)">Event Log</a>
+<a href="http://thehypepipe.co.uk/tag/exchange-2007/" class="tag-cloud-link tag-link-58 tag-link-position-13" style="font-size: 11.422222222222pt;" aria-label="Exchange 2007 (4 items)">Exchange 2007</a>
+<a href="http://thehypepipe.co.uk/tag/exchange-2010/" class="tag-cloud-link tag-link-59 tag-link-position-14" style="font-size: 14.533333333333pt;" aria-label="Exchange 2010 (7 items)">Exchange 2010</a>
+<a href="http://thehypepipe.co.uk/tag/gpo/" class="tag-cloud-link tag-link-24 tag-link-position-15" style="font-size: 18.422222222222pt;" aria-label="GPO (13 items)">GPO</a>
+<a href="http://thehypepipe.co.uk/tag/hp/" class="tag-cloud-link tag-link-40 tag-link-position-16" style="font-size: 13.755555555556pt;" aria-label="HP (6 items)">HP</a>
+<a href="http://thehypepipe.co.uk/tag/installation/" class="tag-cloud-link tag-link-76 tag-link-position-17" style="font-size: 20.755555555556pt;" aria-label="Installation (19 items)">Installation</a>
+<a href="http://thehypepipe.co.uk/tag/iops/" class="tag-cloud-link tag-link-71 tag-link-position-18" style="font-size: 8pt;" aria-label="IOPS (2 items)">IOPS</a>
+<a href="http://thehypepipe.co.uk/tag/iscsi/" class="tag-cloud-link tag-link-88 tag-link-position-19" style="font-size: 12.666666666667pt;" aria-label="iSCSI (5 items)">iSCSI</a>
+<a href="http://thehypepipe.co.uk/tag/licensing/" class="tag-cloud-link tag-link-78 tag-link-position-20" style="font-size: 8pt;" aria-label="Licensing (2 items)">Licensing</a>
+<a href="http://thehypepipe.co.uk/tag/monitoring/" class="tag-cloud-link tag-link-38 tag-link-position-21" style="font-size: 12.666666666667pt;" aria-label="Monitoring (5 items)">Monitoring</a>
+<a href="http://thehypepipe.co.uk/tag/nas/" class="tag-cloud-link tag-link-87 tag-link-position-22" style="font-size: 9.8666666666667pt;" aria-label="NAS (3 items)">NAS</a>
+<a href="http://thehypepipe.co.uk/tag/odbc/" class="tag-cloud-link tag-link-80 tag-link-position-23" style="font-size: 9.8666666666667pt;" aria-label="ODBC (3 items)">ODBC</a>
+<a href="http://thehypepipe.co.uk/tag/powershell/" class="tag-cloud-link tag-link-35 tag-link-position-24" style="font-size: 11.422222222222pt;" aria-label="PowerShell (4 items)">PowerShell</a>
+<a href="http://thehypepipe.co.uk/tag/rds/" class="tag-cloud-link tag-link-56 tag-link-position-25" style="font-size: 11.422222222222pt;" aria-label="RDS (4 items)">RDS</a>
+<a href="http://thehypepipe.co.uk/tag/san/" class="tag-cloud-link tag-link-86 tag-link-position-26" style="font-size: 12.666666666667pt;" aria-label="SAN (5 items)">SAN</a>
+<a href="http://thehypepipe.co.uk/tag/server-2003/" class="tag-cloud-link tag-link-30 tag-link-position-27" style="font-size: 13.755555555556pt;" aria-label="Server 2003 (6 items)">Server 2003</a>
+<a href="http://thehypepipe.co.uk/tag/server-2008/" class="tag-cloud-link tag-link-31 tag-link-position-28" style="font-size: 22pt;" aria-label="Server 2008 (23 items)">Server 2008</a>
+<a href="http://thehypepipe.co.uk/tag/shortcuts/" class="tag-cloud-link tag-link-20 tag-link-position-29" style="font-size: 11.422222222222pt;" aria-label="Shortcuts (4 items)">Shortcuts</a>
+<a href="http://thehypepipe.co.uk/tag/snmp/" class="tag-cloud-link tag-link-106 tag-link-position-30" style="font-size: 11.422222222222pt;" aria-label="SNMP (4 items)">SNMP</a>
+<a href="http://thehypepipe.co.uk/tag/software/" class="tag-cloud-link tag-link-44 tag-link-position-31" style="font-size: 12.666666666667pt;" aria-label="Software (5 items)">Software</a>
+<a href="http://thehypepipe.co.uk/tag/sql/" class="tag-cloud-link tag-link-83 tag-link-position-32" style="font-size: 18.422222222222pt;" aria-label="SQL (13 items)">SQL</a>
+<a href="http://thehypepipe.co.uk/tag/suse-linux-enterprise-server/" class="tag-cloud-link tag-link-15 tag-link-position-33" style="font-size: 9.8666666666667pt;" aria-label="SUSE Linux Enterprise Server (3 items)">SUSE Linux Enterprise Server</a>
+<a href="http://thehypepipe.co.uk/tag/sysinternals/" class="tag-cloud-link tag-link-54 tag-link-position-34" style="font-size: 9.8666666666667pt;" aria-label="Sysinternals (3 items)">Sysinternals</a>
+<a href="http://thehypepipe.co.uk/tag/system-center/" class="tag-cloud-link tag-link-77 tag-link-position-35" style="font-size: 13.755555555556pt;" aria-label="System Center (6 items)">System Center</a>
+<a href="http://thehypepipe.co.uk/tag/terminal-services/" class="tag-cloud-link tag-link-57 tag-link-position-36" style="font-size: 11.422222222222pt;" aria-label="Terminal Services (4 items)">Terminal Services</a>
+<a href="http://thehypepipe.co.uk/tag/training/" class="tag-cloud-link tag-link-84 tag-link-position-37" style="font-size: 8pt;" aria-label="Training (2 items)">Training</a>
+<a href="http://thehypepipe.co.uk/tag/troubleshooting/" class="tag-cloud-link tag-link-25 tag-link-position-38" style="font-size: 20.133333333333pt;" aria-label="Troubleshooting (17 items)">Troubleshooting</a>
+<a href="http://thehypepipe.co.uk/tag/vcenter/" class="tag-cloud-link tag-link-91 tag-link-position-39" style="font-size: 8pt;" aria-label="vCenter (2 items)">vCenter</a>
+<a href="http://thehypepipe.co.uk/tag/vcenter-virtual-appliance/" class="tag-cloud-link tag-link-17 tag-link-position-40" style="font-size: 9.8666666666667pt;" aria-label="vCenter Virtual Appliance (3 items)">vCenter Virtual Appliance</a>
+<a href="http://thehypepipe.co.uk/tag/vmware-vsphere/" class="tag-cloud-link tag-link-18 tag-link-position-41" style="font-size: 12.666666666667pt;" aria-label="VMware vSphere (5 items)">VMware vSphere</a>
+<a href="http://thehypepipe.co.uk/tag/win7/" class="tag-cloud-link tag-link-19 tag-link-position-42" style="font-size: 16.088888888889pt;" aria-label="Win7 (9 items)">Win7</a>
+<a href="http://thehypepipe.co.uk/tag/winxp/" class="tag-cloud-link tag-link-36 tag-link-position-43" style="font-size: 13.755555555556pt;" aria-label="WinXP (6 items)">WinXP</a>
+<a href="http://thehypepipe.co.uk/tag/wsus/" class="tag-cloud-link tag-link-53 tag-link-position-44" style="font-size: 9.8666666666667pt;" aria-label="WSUS (3 items)">WSUS</a>
+<a href="http://thehypepipe.co.uk/tag/xenapp/" class="tag-cloud-link tag-link-104 tag-link-position-45" style="font-size: 17.333333333333pt;" aria-label="XenApp (11 items)">XenApp</a></div>
+</div></div>
+</div></div></div><div id="footer" class="footer"><div class="wrap"><div class="gototop"><p><a href="#wrap" rel="nofollow">Return to top of page</a></p></div><div class="creds"><p>Copyright © 2019 · <a href="https://www.studiopress.com/themes/enterprise">Enterprise Child Theme</a> on <a href="https://www.studiopress.com/">Genesis Framework</a> · <a href="https://wordpress.org/">WordPress</a> · <a rel="nofollow" href="http://thehypepipe.co.uk/wp-login.php">Log in</a></p></div></div></div></div>	<div style="display:none">
+	<div class="grofile-hash-map-40675c91e422ff74e557b6a8b4826bd3">
+	</div>
+	</div>
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"http:\/\/thehypepipe.co.uk\/speed-up-dhcp-delays-with-portfast-on-cisco-switches-and-routers\/":501};
+	</script><div id="sharing_email" style="display: none;">
+		<form action="/speed-up-dhcp-delays-with-portfast-on-cisco-switches-and-routers/" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="email" name="target_email" id="target_email" value=""><label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name" value=""><label for="source_email">Your Email Address</label>
+				<input type="email" name="source_email" id="source_email" value=""><input type="text" id="jetpack-source_f_name" name="source_f_name" class="input" value="" size="25" autocomplete="off" title="This field is for validation and should not be changed"><img style="float: right; display: none" class="loading" src="http://thehypepipe.co.uk/wp-content/plugins/jetpack/modules/sharedaddy/images/loading.gif" alt="loading" width="16" height="16"><input type="submit" value="Send Email" class="sharing_send"><a rel="nofollow" href="#cancel" class="sharing_cancel" role="button">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div>
+		<script type="text/javascript" src="http://thehypepipe.co.uk/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js"></script><script type="text/javascript" src="http://thehypepipe.co.uk/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPlain.js"></script><script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://thehypepipe.co.uk/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://thehypepipe.co.uk/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeFadeToGrey.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['auto-links'] = false;
+	SyntaxHighlighter.defaults['gutter'] = false;
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+
+	// Infinite scroll support
+	if ( typeof( jQuery ) !== 'undefined' ) {
+		jQuery( function( $ ) {
+			$( document.body ).on( 'post-load', function() {
+				SyntaxHighlighter.highlight();
+			} );
+		} );
+	}
+</script><link rel="stylesheet" id="genericons-css" href="http://thehypepipe.co.uk/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css" type="text/css" media="all"><script type="text/javascript" src="http://thehypepipe.co.uk/wp-content/plugins/jetpack/_inc/build/photon/photon.min.js"></script><script type="text/javascript" src="https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201936"></script><script type="text/javascript" src="https://secure.gravatar.com/js/gprofiles.js?ver=2019Sepaa"></script><script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script><script type="text/javascript" src="http://thehypepipe.co.uk/wp-content/plugins/jetpack/modules/wpgroho.js"></script><script type="text/javascript" src="http://thehypepipe.co.uk/wp-includes/js/hoverIntent.min.js"></script><script type="text/javascript" src="http://thehypepipe.co.uk/wp-content/themes/genesis/lib/js/menu/superfish.min.js"></script><script type="text/javascript" src="http://thehypepipe.co.uk/wp-content/themes/genesis/lib/js/menu/superfish.args.min.js"></script><script type="text/javascript" src="http://thehypepipe.co.uk/wp-content/themes/genesis/lib/js/menu/superfish.compat.min.js"></script><script type="text/javascript">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+/* ]]> */
+</script><script type="text/javascript" src="http://thehypepipe.co.uk/wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js"></script><script type="text/javascript">
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-linkedin', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-twitter', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-tumblr', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtumblr', 'menubar=1,resizable=1,width=450,height=450' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+</script><script type="text/javascript" src="https://stats.wp.com/e-201936.js" async="async" defer></script><script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:7.3.1',blog:'32859169',post:'501',tz:'0',srv:'www.virtuallyimpossible.co.uk'} ]);
+	_stq.push([ 'clickTrackerInit', '32859169', '501' ]);
+</script></body></html>

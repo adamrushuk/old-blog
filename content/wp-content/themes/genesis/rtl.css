@@ -1,0 +1,43 @@
+body {direction: rtl;unicode-bidi: embed;}
+blockquote::before {content: "”";left: auto;right: -20px;}
+.screen-reader-text {right: 0;}
+.content-sidebar-sidebar .content-sidebar-wrap {float: right;}
+.sidebar-content-sidebar .content-sidebar-wrap, .sidebar-sidebar-content .content-sidebar-wrap {float: left;}
+.content {float: left;}
+.content-sidebar .content, .content-sidebar-sidebar .content, .sidebar-content-sidebar .content {float: right;}
+.sidebar-primary {float: left;}
+.sidebar-content .sidebar-primary, .sidebar-sidebar-content .sidebar-primary {float: right;}
+.sidebar-secondary {float: right;}
+.content-sidebar-sidebar .sidebar-secondary {float: left;}
+.five-sixths, .four-sixths, .one-fourth, .one-half, .one-sixth, .one-third, .three-fourths, .three-sixths, .two-fourths, .two-sixths, .two-thirds {float: right;margin-left: auto;margin-right: 2.5641025641026%;}
+.first {margin-left: auto;margin-right: 0;}
+.avatar {float: right;}
+.alignleft .avatar {margin-left: 24px;margin-right: auto;}
+.alignright .avatar {margin-left: auto;margin-right: 24px;}
+.alignleft {float: right;text-align: right;}
+.alignright {float: left;text-align: left;}
+img.alignleft, .wp-caption.alignleft {margin: 0 0 24px 24px;}
+img.alignright, .wp-caption.alignright {margin: 0 24px 24px 0;}
+.author-box .avatar {margin-left: 24px;margin-right: auto;}
+.title-area {float: right;}
+.header-image .site-header .wrap {background-position: right;}
+.header-image .site-title a {float: right;}
+.site-header .widget-area {float: left;text-align: left;}
+.site-header .search-form {float: left;}
+.genesis-nav-menu .menu-item {text-align: right;}
+.genesis-nav-menu .sub-menu {right: -9999px;left: auto;}
+.genesis-nav-menu .sub-menu .sub-menu {margin: -54px 199px 0 0;}
+.genesis-nav-menu .menu-item:hover > .sub-menu {left: auto;right: auto;}
+.genesis-nav-menu > .first > a {padding-left: 0;padding-right: 0;}
+.genesis-nav-menu > .last > a {padding-left: 0;padding-right: 0;}
+.genesis-nav-menu > .right {float: left;}
+.genesis-nav-menu > .rss > a {margin-left: auto;margin-right: 48px;}
+.entry-content ol li, .entry-content ul li {margin-left: auto;margin-right: 40px;}
+.entry-meta .entry-comments::before {margin: 0 2px 0 6px;}
+#respond label {margin-left: 12px;margin-right: auto;}
+.comment-list li li {margin-left: -32px;margin-right: auto;}
+li.comment {border-left: none;border-right: none;}
+.comment .avatar {margin: 0 0 24px 16px;}
+.footer-widgets-1 {margin-left: 40px;margin-right: auto;}
+.footer-widgets-1, .footer-widgets-2 {float: right;}
+.footer-widgets-3 {float: left;}
