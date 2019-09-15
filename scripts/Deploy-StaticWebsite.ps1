@@ -57,6 +57,8 @@ if (Get-AzResourceGroup @rgParams) {
     } catch {
         Write-Host "ERROR!" -ForegroundColor "Red"
         throw $_
+        # Report error to Azure DevOps
+        Write-Host "##vso[task.logissue type=error]ERROR: $_.Exception.Message."
     }
     Write-Host "SUCCESS!" -ForegroundColor "Green"
 }
@@ -92,6 +94,8 @@ if (Get-AzStorageAccount @saParams) {
     } catch {
         Write-Host "ERROR!" -ForegroundColor "Red"
         throw $_
+        # Report error to Azure DevOps
+        Write-Host "##vso[task.logissue type=error]ERROR: $_.Exception.Message."
     }
     Write-Host "SUCCESS!" -ForegroundColor "Green"
 }
@@ -121,6 +125,8 @@ try {
 } catch {
     Write-Host "ERROR!" -ForegroundColor "Red"
     throw $_
+    # Report error to Azure DevOps
+    Write-Host "##vso[task.logissue type=error]ERROR: $_.Exception.Message."
 }
 Write-Host "SUCCESS!" -ForegroundColor "Green"
 #endregion Enable Static Website
@@ -144,6 +150,8 @@ try {
 } catch {
     Write-Host "ERROR!" -ForegroundColor "Red"
     throw $_
+    # Report error to Azure DevOps
+    Write-Host "##vso[task.logissue type=error]ERROR: $_.Exception.Message."
 }
 Write-Host "SUCCESS!" -ForegroundColor "Green"
 #endregion Custom Domain
