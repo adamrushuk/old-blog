@@ -7,13 +7,21 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: ubuntu-latest
+
+variables:
+  SERVICE_CONNECTION: arm_sc01
+  LOCATION_NAME: eastus
+  RESOURCE_GROUP_NAME: old-blog-rg
+  STORAGE_ACCOUNT_NAME: virtuallyimpossiblecouk
+  CONTENT_RELATIVE_PATH: content
+  DOMAIN_FQDN: www.virtuallyimpossible2.co.uk
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: AzurePowerShell@4
+  displayName: 'Deploy Static Website'
+  inputs:
+    azureSubscription: $(SERVICE_CONNECTION)
+    ScriptPath: scripts/Deploy-StaticWebsite.ps1
+    ScriptArguments: -LocationName $(LOCATION_NAME) -ResourceGroupName $(RESOURCE_GROUP_NAME) -StorageAccountName $(STORAGE_ACCOUNT_NAME) -ContentRelativePath $(CONTENT_RELATIVE_PATH) -DomainFqdn $(DOMAIN_FQDN) -PARAM $(VARIABLE)
+    azurePowerShellVersion: LatestVersion
