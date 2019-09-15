@@ -18,7 +18,7 @@ variables:
   RESOURCE_GROUP_NAME: old-blog-rg
   STORAGE_ACCOUNT_NAME: virtuallyimpossiblecouk
   CONTENT_RELATIVE_PATH: content
-  DOMAIN_FQDN: www.virtuallyimpossible2.co.uk
+  DOMAIN_FQDN: www.virtuallyimpossible.co.uk
 
 steps:
 - task: AzurePowerShell@4
