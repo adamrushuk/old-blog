@@ -13,18 +13,41 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
+  # Main vars
   SERVICE_CONNECTION: arm_sc01
   LOCATION_NAME: eastus
   RESOURCE_GROUP_NAME: old-blog-rg
   STORAGE_ACCOUNT_NAME: virtuallyimpossiblecouk
   CONTENT_RELATIVE_PATH: content
   DOMAIN_FQDN: www.virtuallyimpossible.co.uk
+  PRIMARY_ENDPOINT: DynamicallyAssignedDuringPipelineRun
+
+  # DNS vars
+  DOMAIN_NAME: virtuallyimpossible.co.uk
+  # DNS_API_KEY: SecretDefinedInPipeline
+  # DNS_API_SECRET: SecretDefinedInPipeline
 
 steps:
 - task: AzurePowerShell@4
-  displayName: 'Deploy Static Website'
+  displayName: "Azure PowerShell Script: Deploy Static Website"
   inputs:
     azureSubscription: $(SERVICE_CONNECTION)
     ScriptPath: scripts/Deploy-StaticWebsite.ps1
     ScriptArguments: -LocationName $(LOCATION_NAME) -ResourceGroupName $(RESOURCE_GROUP_NAME) -StorageAccountName $(STORAGE_ACCOUNT_NAME) -ContentRelativePath $(CONTENT_RELATIVE_PATH) -DomainFqdn $(DOMAIN_FQDN)
+    azurePowerShellVersion: LatestVersion
+
+- task: PowerShell@2
+  displayName: "PowerShell Script: Update DNS A Record"
+  inputs:
+    targetType: filePath
+    filePath: scripts/Update-Dns.ps1
+    arguments: -DomainName $(DOMAIN_NAME) -RecordType "CNAME" -RecordName "www" -RecordValue $(PRIMARY_ENDPOINT) -ApiKey $(DNS_API_KEY) -ApiSecret $(DNS_API_SECRET)
+    pwsh: true
+
+- task: AzurePowerShell@4
+  displayName: "Azure PowerShell Script: Set Custom Domain"
+  inputs:
+    azureSubscription: $(SERVICE_CONNECTION)
+    ScriptPath: scripts/Set-CustomDomain.ps1
+    ScriptArguments: -ResourceGroupName $(RESOURCE_GROUP_NAME) -StorageAccountName $(STORAGE_ACCOUNT_NAME) -DomainFqdn $(DOMAIN_FQDN)
     azurePowerShellVersion: LatestVersion
