@@ -58,6 +58,7 @@ if (Get-AzResourceGroup @rgParams) {
         Write-Host "ERROR!" -ForegroundColor "Red"
         # Report error to Azure DevOps
         Write-Host "##vso[task.logissue type=error] $_"
+        throw
     }
     Write-Host "SUCCESS!" -ForegroundColor "Green"
 }
@@ -94,6 +95,7 @@ if (Get-AzStorageAccount @saParams) {
         Write-Host "ERROR!" -ForegroundColor "Red"
         # Report error to Azure DevOps
         Write-Host "##vso[task.logissue type=error] $_"
+        throw
     }
     Write-Host "SUCCESS!" -ForegroundColor "Green"
 }
@@ -124,30 +126,40 @@ try {
     Write-Host "ERROR!" -ForegroundColor "Red"
     # Report error to Azure DevOps
     Write-Host "##vso[task.logissue type=error] $_"
+    throw
 }
 Write-Host "SUCCESS!" -ForegroundColor "Green"
 #endregion Enable Static Website
 
 
-#region Custom Domain
-$taskMessage = "Setting Custom Domain: [$DomainFqdn]"
-Write-Host "`n$taskMessage..." -NoNewline
-
+#region Update Pipeline Variable
+# Get Storage Account
 try {
-    # Set Custom Domain
-    # UseSubDomain enables indirect CNAME validation
-    $setAzSaParams = @{
+    $saParams = @{
         Name              = $StorageAccountName
         ResourceGroupName = $ResourceGroupName
-        CustomDomainName  = $DomainFqdn
-        UseSubDomain      = $UseSubDomain
         ErrorAction       = "Stop"
     }
-    Set-AzStorageAccount @setAzSaParams | Out-String | Write-Verbose
+    $updatedStorageAccount = Get-AzStorageAccount @saParams
 } catch {
     Write-Host "ERROR!" -ForegroundColor "Red"
     # Report error to Azure DevOps
     Write-Host "##vso[task.logissue type=error] $_"
+    throw
 }
 Write-Host "SUCCESS!" -ForegroundColor "Green"
-#endregion Custom Domain
+
+# Update PRIMARY_ENDPOINT pipeline variable
+[Uri]$primaryEndpoint = $updatedStorageAccount.PrimaryEndpoints.Web
+$primaryEndpointHost = $primaryEndpoint.Host
+$message = "Updating pipeline variable [PRIMARY_ENDPOINT] with value: [$primaryEndpointHost]"
+Write-Host "STARTED: $message..."
+Write-Host "##vso[task.setvariable variable=PRIMARY_ENDPOINT]$primaryEndpointHost"
+Write-Host "FINISHED: $message"
+#region Update Pipeline Variable
+
+#region Upload Static Website Content
+# TODO enable content update
+# Get-ChildItem -Path $ContentRelativePath -Recurse | Set-AzStorageBlobContent -Container '$web'
+#endregion Upload Static Website Content
+
