@@ -26,7 +26,8 @@ param (
     $StorageAccessTier = "Hot",
     $StaticWebsiteIndexDocument = "index.html",
     $StaticWebsiteErrorDocument404Path = "404.html",
-    $Tags = @{ keep = "true" }
+    $Tags = @{ keep = "true" },
+    $UseSubDomain = $false
 )
 
 
@@ -130,16 +131,16 @@ $taskMessage = "Setting Custom Domain: [$DomainFqdn]"
 Write-Host "`n$taskMessage..." -NoNewline
 
 try {
-# Set Custom Domain
-# UseSubDomain enables indirect CNAME validation
-$setAzSaParams = @{
-    Name              = $StorageAccountName
-    ResourceGroupName = $ResourceGroupName
-    CustomDomainName  = $DomainFqdn
-    UseSubDomain      = $true
-    ErrorAction       = "Stop"
-}
-Set-AzStorageAccount @setAzSaParams | Out-String | Write-Verbose
+    # Set Custom Domain
+    # UseSubDomain enables indirect CNAME validation
+    $setAzSaParams = @{
+        Name              = $StorageAccountName
+        ResourceGroupName = $ResourceGroupName
+        CustomDomainName  = $DomainFqdn
+        UseSubDomain      = $UseSubDomain
+        ErrorAction       = "Stop"
+    }
+    Set-AzStorageAccount @setAzSaParams | Out-String | Write-Verbose
 } catch {
     Write-Host "ERROR!" -ForegroundColor "Red"
     throw $_
