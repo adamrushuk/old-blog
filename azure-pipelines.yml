@@ -51,6 +51,7 @@ stages:
 
   - job: DnsPropagation
     dependsOn: Deploy
+    # Enable Server Job (agentless job)
     pool: server
     steps:
     - task: InvokeRESTAPI@1
