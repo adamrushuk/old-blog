@@ -49,25 +49,14 @@ stages:
         arguments: -DomainName $(DOMAIN_NAME) -RecordType "CNAME" -RecordName "www" -RecordValue $(PRIMARY_ENDPOINT) -ApiKey $(DNS_API_KEY) -ApiSecret $(DNS_API_SECRET)
         pwsh: true
 
-  - job: DnsPropagation
-    dependsOn: Deploy
-    # Enable Server Job (agentless job)
-    pool: server
-    steps:
-    - task: InvokeRESTAPI@1
+    - task: PowerShell@2
+      displayName: "PowerShell Script: Wait for successful Web Request"
       inputs:
-        connectionType: 'connectedServiceName'
-        serviceConnection: $(GENERIC_SERVICE_CONNECTION)
-        method: 'GET'
-        headers: '{}'
-        waitForCompletion: 'true'
-        successCriteria: '200'
+        targetType: filePath
+        filePath: scripts/Retry-Command.ps1
+        arguments: -TimeoutInSecs 30 -RetryCount 30 -ScriptBlock {Invoke-WebRequest -Uri $(DOMAIN_FQDN)}
+        pwsh: true
 
-  - job: PostConfig
-    dependsOn: DnsPropagation
-    pool:
-      vmImage: $(VM_IMAGE)
-    steps:
     - task: AzurePowerShell@4
       displayName: "Azure PowerShell Script: Set Custom Domain"
       inputs:
