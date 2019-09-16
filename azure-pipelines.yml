@@ -54,7 +54,7 @@ stages:
       inputs:
         targetType: filePath
         filePath: scripts/Retry-Command.ps1
-        arguments: -TimeoutInSecs 30 -RetryCount 30 -ScriptBlock {Invoke-WebRequest -Uri $(DOMAIN_FQDN)}
+        arguments: -TimeoutInSecs 30 -RetryCount 30 -ScriptBlock { Invoke-WebRequest -Uri $(DOMAIN_FQDN) }
         pwsh: true
 
     - task: AzurePowerShell@4

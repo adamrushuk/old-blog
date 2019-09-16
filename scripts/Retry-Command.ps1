@@ -99,52 +99,46 @@ Capable of handling scriptblock's as input through the pipeline.
 https://ridicurious.com/2019/02/01/retry-command-in-powershell/
 #>
 
-function Retry-Command {
-    [CmdletBinding()]
-    param (
-        [parameter(Mandatory, ValueFromPipeline)]
-        [ValidateNotNullOrEmpty()]
-        [scriptblock] $ScriptBlock,
-        [int] $RetryCount = 3,
-        [int] $TimeoutInSecs = 30,
-        [string] $SuccessMessage = "Command executed successfuly!",
-        [string] $FailureMessage = "Failed to execute the command"
-        )
+[CmdletBinding()]
 
-    process {
-        $Attempt = 1
-        $Flag = $true
+param (
+    [parameter(Mandatory)]
+    [ValidateNotNullOrEmpty()]
+    [scriptblock] $ScriptBlock,
+    [int] $RetryCount = 3,
+    [int] $TimeoutInSecs = 30,
+    [string] $SuccessMessage = "Command executed successfuly!",
+    [string] $FailureMessage = "Failed to execute the command"
+)
 
-        do {
-            try {
-                $PreviousPreference = $ErrorActionPreference
-                $ErrorActionPreference = 'Stop'
+$Attempt = 1
+$Flag = $true
 
-                # Show command
-                Write-Host "ScriptBlock: [$ScriptBlock]"
+do {
+    try {
+        $PreviousPreference = $ErrorActionPreference
+        $ErrorActionPreference = 'Stop'
 
-                Invoke-Command -ScriptBlock $ScriptBlock -OutVariable Result
-                $ErrorActionPreference = $PreviousPreference
+        # Show command
+        Write-Host "ScriptBlock: [$ScriptBlock]"
 
-                # flow control will execute the next line only if the command in the scriptblock executed without any errors
-                # if an error is thrown, flow control will go to the 'catch' block
-                Write-Host "$SuccessMessage `n"
-                $Flag = $false
-            }
-            catch {
-                if ($Attempt -gt $RetryCount) {
-                    Write-Host "$FailureMessage! Total retry attempts: $RetryCount"
-                    Write-Host "[Error Message] $($_.exception.message) `n"
-                    $Flag = $false
-                }
-                else {
-                    Write-Host "[$Attempt/$RetryCount] $FailureMessage. Retrying in $TimeoutInSecs seconds..."
-                    Start-Sleep -Seconds $TimeoutInSecs
-                    $Attempt = $Attempt + 1
-                }
-            }
+        Invoke-Command -ScriptBlock $ScriptBlock -OutVariable Result
+        $ErrorActionPreference = $PreviousPreference
+
+        # flow control will execute the next line only if the command in the scriptblock executed without any errors
+        # if an error is thrown, flow control will go to the 'catch' block
+        Write-Host "$SuccessMessage `n"
+        $Flag = $false
+    } catch {
+        if ($Attempt -gt $RetryCount) {
+            Write-Host "$FailureMessage! Total retry attempts: $RetryCount"
+            Write-Host "[Error Message] $($_.exception.message) `n"
+            $Flag = $false
+        } else {
+            Write-Host "[$Attempt/$RetryCount] $FailureMessage. Retrying in $TimeoutInSecs seconds..."
+            Start-Sleep -Seconds $TimeoutInSecs
+            $Attempt = $Attempt + 1
         }
-        While ($Flag)
-
     }
 }
+While ($Flag)
