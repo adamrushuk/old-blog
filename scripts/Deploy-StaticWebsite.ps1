@@ -134,6 +134,9 @@ Write-Host "SUCCESS!" -ForegroundColor "Green"
 
 #region Update Pipeline Variable
 # Get Storage Account
+$taskMessage = "Retrieving updated info for Storage Account: [$StorageAccountName]"
+Write-Host "`n$taskMessage..." -NoNewline
+
 try {
     $saParams = @{
         Name              = $StorageAccountName
@@ -152,10 +155,10 @@ Write-Host "SUCCESS!" -ForegroundColor "Green"
 # Update PRIMARY_ENDPOINT pipeline variable
 [Uri]$primaryEndpoint = $updatedStorageAccount.PrimaryEndpoints.Web
 $primaryEndpointHost = $primaryEndpoint.Host
-$message = "Updating pipeline variable [PRIMARY_ENDPOINT] with value: [$primaryEndpointHost]"
-Write-Host "STARTED: $message..."
+$taskMessage = "Updating pipeline variable [PRIMARY_ENDPOINT] with value: [$primaryEndpointHost]..."
+Write-Host "`n$taskMessage..." -NoNewline
 Write-Host "##vso[task.setvariable variable=PRIMARY_ENDPOINT]$primaryEndpointHost"
-Write-Host "FINISHED: $message"
+Write-Host "SUCCESS!"
 #region Update Pipeline Variable
 
 #region Upload Static Website Content

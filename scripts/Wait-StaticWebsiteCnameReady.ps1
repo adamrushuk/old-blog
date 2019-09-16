@@ -29,7 +29,7 @@ $timer = [Diagnostics.Stopwatch]::StartNew()
 # Start loop
 while ($true) {
     if ($timer.Elapsed.TotalSeconds -gt $TimeoutSeconds) {
-        Write-Output "##vso[task.logissue type=error]Elapsed task time of [$($timer.Elapsed.TotalSeconds)] has exceeded timeout of [$TimeoutSeconds]"
+        Write-Output "##vso[task.logissue type=error] Elapsed task time of [$($timer.Elapsed.TotalSeconds)] seconds has exceeded timeout of [$TimeoutSeconds] seconds"
         exit 1
 
     } else {
@@ -47,7 +47,7 @@ while ($true) {
             break
         }
 
-        Write-Output "##vso[task.logissue type=warning]Still waiting for CNAME to propagate... [$($timer.Elapsed.Minutes)m$($timer.Elapsed.Seconds)s elapsed]"
+        Write-Output "##vso[task.logissue type=warning] Still waiting for CNAME to propagate... [$($timer.Elapsed.Minutes)m$($timer.Elapsed.Seconds)s elapsed]"
         Start-Sleep -Seconds $RetryIntervalSeconds
     }
 }
