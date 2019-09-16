@@ -10,10 +10,12 @@ trigger:
     - master
 
 variables:
+  system.debug: true
+
   # Main vars
   VM_IMAGE: ubuntu-16.04
   SERVICE_CONNECTION: arm_sc01
-  GENERIC_SERVICE_CONNECTION: generic_sc_www.virtuallyimpossible.co.uk
+  # GENERIC_SERVICE_CONNECTION: generic_sc_www.virtuallyimpossible.co.uk
   LOCATION_NAME: eastus
   RESOURCE_GROUP_NAME: old-blog-rg
   STORAGE_ACCOUNT_NAME: virtuallyimpossiblecouk
@@ -54,7 +56,7 @@ stages:
       inputs:
         targetType: filePath
         filePath: scripts/Wait-StaticWebsiteCnameReady.ps1
-        arguments: -DomainFqdn $(DOMAIN_FQDN) -WaitForStatusCode 400 -TimeoutSeconds 900
+        arguments: -DomainFqdn $(DOMAIN_FQDN) -WaitForStatusCode 400 -TimeoutSeconds 240
         pwsh: true
 
     - task: AzurePowerShell@4
