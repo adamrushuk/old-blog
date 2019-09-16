@@ -9,11 +9,9 @@ trigger:
     include:
     - master
 
-pool:
-  vmImage: ubuntu-latest
-
 variables:
   # Main vars
+  VM_IMAGE: ubuntu-16.04
   SERVICE_CONNECTION: arm_sc01
   GENERIC_SERVICE_CONNECTION: generic_sc_www.virtuallyimpossible.co.uk
   LOCATION_NAME: eastus
@@ -28,36 +26,49 @@ variables:
   # DNS_API_KEY: SecretDefinedInPipeline
   # DNS_API_SECRET: SecretDefinedInPipeline
 
-steps:
-- task: AzurePowerShell@4
-  displayName: "Azure PowerShell Script: Deploy Static Website"
-  inputs:
-    azureSubscription: $(SERVICE_CONNECTION)
-    ScriptPath: scripts/Deploy-StaticWebsite.ps1
-    ScriptArguments: -LocationName $(LOCATION_NAME) -ResourceGroupName $(RESOURCE_GROUP_NAME) -StorageAccountName $(STORAGE_ACCOUNT_NAME) -ContentRelativePath $(CONTENT_RELATIVE_PATH) -DomainFqdn $(DOMAIN_FQDN)
-    azurePowerShellVersion: LatestVersion
+stages:
+- stage: Deploy
+  jobs:
+  - job: Deploy
+    pool:
+      vmImage: $(VM_IMAGE)
+    steps:
+    - task: AzurePowerShell@4
+      displayName: "Azure PowerShell Script: Deploy Static Website"
+      inputs:
+        azureSubscription: $(SERVICE_CONNECTION)
+        ScriptPath: scripts/Deploy-StaticWebsite.ps1
+        ScriptArguments: -LocationName $(LOCATION_NAME) -ResourceGroupName $(RESOURCE_GROUP_NAME) -StorageAccountName $(STORAGE_ACCOUNT_NAME) -ContentRelativePath $(CONTENT_RELATIVE_PATH) -DomainFqdn $(DOMAIN_FQDN)
+        azurePowerShellVersion: LatestVersion
 
-- task: PowerShell@2
-  displayName: "PowerShell Script: Update DNS A Record"
-  inputs:
-    targetType: filePath
-    filePath: scripts/Update-Dns.ps1
-    arguments: -DomainName $(DOMAIN_NAME) -RecordType "CNAME" -RecordName "www" -RecordValue $(PRIMARY_ENDPOINT) -ApiKey $(DNS_API_KEY) -ApiSecret $(DNS_API_SECRET)
-    pwsh: true
+    - task: PowerShell@2
+      displayName: "PowerShell Script: Update DNS A Record"
+      inputs:
+        targetType: filePath
+        filePath: scripts/Update-Dns.ps1
+        arguments: -DomainName $(DOMAIN_NAME) -RecordType "CNAME" -RecordName "www" -RecordValue $(PRIMARY_ENDPOINT) -ApiKey $(DNS_API_KEY) -ApiSecret $(DNS_API_SECRET)
+        pwsh: true
 
-- task: InvokeRESTAPI@1
-  inputs:
-    connectionType: 'connectedServiceName'
-    serviceConnection: $(GENERIC_SERVICE_CONNECTION)
-    method: 'GET'
-    headers: '{}'
-    waitForCompletion: 'true'
-    successCriteria: '200'
+  - job: DnsPropagation
+    pool: server
+    steps:
+    - task: InvokeRESTAPI@1
+      inputs:
+        connectionType: 'connectedServiceName'
+        serviceConnection: $(GENERIC_SERVICE_CONNECTION)
+        method: 'GET'
+        headers: '{}'
+        waitForCompletion: 'true'
+        successCriteria: '200'
 
-- task: AzurePowerShell@4
-  displayName: "Azure PowerShell Script: Set Custom Domain"
-  inputs:
-    azureSubscription: $(SERVICE_CONNECTION)
-    ScriptPath: scripts/Set-CustomDomain.ps1
-    ScriptArguments: -ResourceGroupName $(RESOURCE_GROUP_NAME) -StorageAccountName $(STORAGE_ACCOUNT_NAME) -DomainFqdn $(DOMAIN_FQDN)
-    azurePowerShellVersion: LatestVersion
+  - job: PostConfig
+    pool:
+      vmImage: $(VM_IMAGE)
+    steps:
+    - task: AzurePowerShell@4
+      displayName: "Azure PowerShell Script: Set Custom Domain"
+      inputs:
+        azureSubscription: $(SERVICE_CONNECTION)
+        ScriptPath: scripts/Set-CustomDomain.ps1
+        ScriptArguments: -ResourceGroupName $(RESOURCE_GROUP_NAME) -StorageAccountName $(STORAGE_ACCOUNT_NAME) -DomainFqdn $(DOMAIN_FQDN)
+        azurePowerShellVersion: LatestVersion
