@@ -50,6 +50,7 @@ stages:
         pwsh: true
 
   - job: DnsPropagation
+    dependsOn: Deploy
     pool: server
     steps:
     - task: InvokeRESTAPI@1
@@ -62,6 +63,7 @@ stages:
         successCriteria: '200'
 
   - job: PostConfig
+    dependsOn: DnsPropagation
     pool:
       vmImage: $(VM_IMAGE)
     steps:
