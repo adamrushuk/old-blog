@@ -58,12 +58,13 @@ stages:
         filePath: scripts/Wait-StaticWebsiteCnameReady.ps1
         arguments: -DomainFqdn $(DOMAIN_FQDN) -WaitForStatusCode 400 -TimeoutSeconds 240
         pwsh: true
+      continueOnError: true
 
     - task: AzurePowerShell@4
       displayName: "Azure PowerShell Script: Set Custom Domain"
-      condition: always()
       inputs:
         azureSubscription: $(SERVICE_CONNECTION)
         ScriptPath: scripts/Set-CustomDomain.ps1
         ScriptArguments: -ResourceGroupName $(RESOURCE_GROUP_NAME) -StorageAccountName $(STORAGE_ACCOUNT_NAME) -DomainFqdn $(DOMAIN_FQDN)
         azurePowerShellVersion: LatestVersion
+      condition: always()
