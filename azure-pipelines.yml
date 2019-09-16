@@ -53,8 +53,8 @@ stages:
       displayName: "PowerShell Script: Wait for successful Web Request"
       inputs:
         targetType: filePath
-        filePath: scripts/Retry-Command.ps1
-        arguments: -TimeoutInSecs 30 -RetryCount 30 -ScriptBlock { Invoke-WebRequest -Uri $(DOMAIN_FQDN) }
+        filePath: scripts/Wait-StaticWebsiteCnameReady.ps1
+        arguments: -DomainFqdn $(DOMAIN_FQDN) -WaitForStatusCode 400 -TimeoutSeconds 900
         pwsh: true
 
     - task: AzurePowerShell@4
