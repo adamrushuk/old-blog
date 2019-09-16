@@ -164,6 +164,6 @@ Write-Host "SUCCESS!"
 #region Upload Static Website Content
 # TODO enable content update
 # Get-ChildItem -Path $ContentRelativePath -Recurse | Set-AzStorageBlobContent -Container '$web'
-Get-ChildItem -Path $ContentRelativePath/* -Include "index.html" | Set-AzStorageBlobContent -Container '$web' | Out-Null
+Get-ChildItem -Path $ContentRelativePath/* -Include "index.html" |
+    Set-AzStorageBlobContent -Container '$web' -ErrorAction "SilentlyContinue"  | Out-Null
 #endregion Upload Static Website Content
-
