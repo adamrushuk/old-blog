@@ -15,6 +15,7 @@ pool:
 variables:
   # Main vars
   SERVICE_CONNECTION: arm_sc01
+  GENERIC_SERVICE_CONNECTION: generic_sc_www.virtuallyimpossible.co.uk
   LOCATION_NAME: eastus
   RESOURCE_GROUP_NAME: old-blog-rg
   STORAGE_ACCOUNT_NAME: virtuallyimpossiblecouk
@@ -43,6 +44,15 @@ steps:
     filePath: scripts/Update-Dns.ps1
     arguments: -DomainName $(DOMAIN_NAME) -RecordType "CNAME" -RecordName "www" -RecordValue $(PRIMARY_ENDPOINT) -ApiKey $(DNS_API_KEY) -ApiSecret $(DNS_API_SECRET)
     pwsh: true
+
+- task: InvokeRESTAPI@1
+  inputs:
+    connectionType: 'connectedServiceName'
+    serviceConnection: $(GENERIC_SERVICE_CONNECTION)
+    method: 'GET'
+    headers: '{}'
+    waitForCompletion: 'true'
+    successCriteria: '200'
 
 - task: AzurePowerShell@4
   displayName: "Azure PowerShell Script: Set Custom Domain"
