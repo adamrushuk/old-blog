@@ -59,6 +59,7 @@ stages:
 
     - task: AzurePowerShell@4
       displayName: "Azure PowerShell Script: Set Custom Domain"
+      condition: always()
       inputs:
         azureSubscription: $(SERVICE_CONNECTION)
         ScriptPath: scripts/Set-CustomDomain.ps1
