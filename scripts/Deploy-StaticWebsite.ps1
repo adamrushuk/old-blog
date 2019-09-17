@@ -14,6 +14,7 @@
     Twitter: @adamrushuk
 #>
 
+
 [CmdletBinding()]
 param (
     $LocationName,
@@ -159,23 +160,34 @@ $taskMessage = "Updating pipeline variable [PRIMARY_ENDPOINT] with value: [$prim
 Write-Host "`n$taskMessage..." -NoNewline
 Write-Host "##vso[task.setvariable variable=PRIMARY_ENDPOINT]$primaryEndpointHost"
 Write-Host "SUCCESS!"
-#region Update Pipeline Variable
+#endregion Update Pipeline Variable
+
 
 #region Upload Static Website Content
 ## Test single file
 # $contentFiles = Get-ChildItem -Path $ContentRelativePath/* -Include "index.html"
 # Get all content
-$contentFiles = Get-ChildItem -Path $ContentRelativePath -Recurse -File
+$contentFiles = Get-ChildItem -Path $ContentRelativePath -Recurse
 
 # Load helper function
 $functionFilePath = Join-Path -Path $PSScriptRoot -ChildPath "Find-MimeType.ps1"
 . $functionFilePath
 
-# Set content type and upload blobs
+# Upload content
 Write-Host "`nUploading content to `$web Container in Storage Account: [$StorageAccountName]" -NoNewline
+$setAzStorageBlobContentParams = @{
+    Container = '$web'
+    Force     = $true
+}
 foreach ($contentFile in $contentFiles) {
-    $fileMimeType = Find-MimeType -FileExtension "$($contentFile.Extension.ToLower())"
-    $contentFile | Set-AzStorageBlobContent -Container '$web' -Properties @{ ContentType = $fileMimeType } -Force
+    # Find mime type for any files
+    if (-not $contentFile.PSIsContainer) {
+        $fileMimeType = Find-MimeType -FileExtension "$($contentFile.Extension.ToLower())"
+        $setAzStorageBlobContentParams.Properties = @{ ContentType = $fileMimeType }
+    }
+
+    # Upload blob
+    $contentFile | Set-AzStorageBlobContent @setAzStorageBlobContentParams | Out-Null
 }
 
 Write-Host "SUCCESS!"
