@@ -162,11 +162,41 @@ Write-Host "SUCCESS!"
 #region Update Pipeline Variable
 
 #region Upload Static Website Content
+# TODO: Create helper function to set ContentType depending on file extension, add:Set-AzStorageBlobContent -Properties @{ContentType = "text/html|image/png|..etc"}
+# Create Content Type Map
+# Full list here: https://www.ryadel.com/en/get-file-content-mime-type-from-extension-asp-net-mvc-core/
+# source: %windir%\system32\inetsrv\config\applicationHost.config
+$contentTypeMap = @{
+    ".html"  = "text/html"
+    ".jpg"  = "image/jpeg"
+    ".jpeg" = "image/jpeg"
+    ".gif"  = "image/gif"
+    ".png"  = "image/png"
+    ".tiff" = "image/tiff"
+    ".zip"  = "application/zip"
+    ".json" = "application/json"
+    ".xml"  = "application/xml"
+    ".rar"  = "application/x-rar-compressed"
+    ".gzip" = "application/x-gzip"
+}
+
+# Get all content
+# $contentFiles = Get-ChildItem -Path $ContentRelativePath -Recurse
+# Test single file
+$contentFiles = Get-ChildItem -Path $ContentRelativePath/* -Include "index.html"
+
+# Set content type and upload blobs
 Write-Host "`nUploading content to `$web Container in Storage Account: [$StorageAccountName]" -NoNewline
+foreach ($contentFile in $contentFiles) {
+    $fileMimeType = $contentTypeMap[$contentFile.Extension.ToLower()]
+    $contentFile | Set-AzStorageBlobContent -Container '$web' -Properties @{ContentType = $fileMimeType} -Force
+}
+
+
 # Get-ChildItem -Path $ContentRelativePath -Recurse | Set-AzStorageBlobContent -Container '$web' -ErrorAction "SilentlyContinue" | Out-Null
 
 # Test single file
-Get-ChildItem -Path $ContentRelativePath/* -Include "index.html" | Set-AzStorageBlobContent -Container '$web'
+# Get-ChildItem -Path $ContentRelativePath/* -Include "index.html" | Set-AzStorageBlobContent -Container '$web' -Force
 
 Write-Host "SUCCESS!"
 #endregion Upload Static Website Content
