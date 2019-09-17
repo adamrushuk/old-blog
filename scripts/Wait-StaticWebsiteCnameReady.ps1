@@ -36,11 +36,11 @@ while ($true) {
         try {
             $response = Invoke-WebRequest -Uri $DomainFqdn
             Write-Host "WebRequest invoked without error..."
-            $response
+            $response | Out-String | Write-Verbose
         } catch {
             $response = $_.Exception.Response
             Write-Host "WebRequest invoked exception..."
-            $_
+            $_ | Out-String | Write-Verbose
         }
 
         # Wait until StatusCode
