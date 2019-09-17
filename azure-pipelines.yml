@@ -10,7 +10,7 @@ trigger:
     - master
 
 variables:
-  system.debug: true
+  system.debug: false
 
   # Main vars
   VM_IMAGE: ubuntu-16.04
@@ -67,4 +67,4 @@ stages:
         ScriptPath: scripts/Set-CustomDomain.ps1
         ScriptArguments: -ResourceGroupName $(RESOURCE_GROUP_NAME) -StorageAccountName $(STORAGE_ACCOUNT_NAME) -DomainFqdn $(DOMAIN_FQDN)
         azurePowerShellVersion: LatestVersion
-      condition: always()
+      condition: succeededOrFailed()
