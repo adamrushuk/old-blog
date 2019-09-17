@@ -34,7 +34,7 @@ while ($true) {
 
     } else {
         try {
-            $response = Invoke-WebRequest -Uri $DOMAIN_FQDN
+            $response = Invoke-WebRequest -Uri $DomainFqdn
             Write-Host "WebRequest invoked without error..."
             $response
         } catch {
