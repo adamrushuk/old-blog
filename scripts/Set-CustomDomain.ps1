@@ -32,6 +32,7 @@ try {
         CustomDomainName  = $DomainFqdn
         UseSubDomain      = $UseSubDomain
         ErrorAction       = "Stop"
+        Force             = $true
     }
     Set-AzStorageAccount @setAzSaParams | Out-String | Write-Verbose
 } catch {
