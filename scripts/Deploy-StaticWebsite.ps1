@@ -163,11 +163,10 @@ Write-Host "SUCCESS!"
 
 #region Upload Static Website Content
 Write-Host "`nUploading content to `$web Container in Storage Account: [$StorageAccountName]" -NoNewline
-Get-ChildItem -Path $ContentRelativePath -Recurse | Set-AzStorageBlobContent -Container '$web' -ErrorAction "SilentlyContinue" | Out-Null
+# Get-ChildItem -Path $ContentRelativePath -Recurse | Set-AzStorageBlobContent -Container '$web' -ErrorAction "SilentlyContinue" | Out-Null
 
 # Test single file
-# Get-ChildItem -Path $ContentRelativePath/* -Include "index.html" |
-#     Set-AzStorageBlobContent -Container '$web' -ErrorAction "SilentlyContinue" | Out-Null
+Get-ChildItem -Path $ContentRelativePath/* -Include "index.html" | Set-AzStorageBlobContent -Container '$web'
 
 Write-Host "SUCCESS!"
 #endregion Upload Static Website Content
