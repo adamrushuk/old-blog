@@ -43,7 +43,7 @@ stages:
       inputs:
         azureSubscription: $(SERVICE_CONNECTION)
         ScriptPath: scripts/Deploy-StaticWebsite.ps1
-        ScriptArguments: |-
+        ScriptArguments: >
           -LocationName $(LOCATION_NAME)
           -ResourceGroupName $(RESOURCE_GROUP_NAME)
           -StorageAccountName $(STORAGE_ACCOUNT_NAME)
