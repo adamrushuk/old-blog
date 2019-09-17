@@ -56,7 +56,7 @@ stages:
       inputs:
         targetType: filePath
         filePath: scripts/Update-Dns.ps1
-        arguments: |-
+        arguments: >
           -DomainName $(DOMAIN_NAME)
           -RecordType "CNAME"
           -RecordName "www"
@@ -70,7 +70,7 @@ stages:
       inputs:
         targetType: filePath
         filePath: scripts/Wait-StaticWebsiteCnameReady.ps1
-        arguments: |-
+        arguments: >
            -DomainFqdn $(DOMAIN_FQDN)
            -WaitForStatusCode 400
            -TimeoutSeconds 240
@@ -82,7 +82,7 @@ stages:
       inputs:
         azureSubscription: $(SERVICE_CONNECTION)
         ScriptPath: scripts/Set-CustomDomain.ps1
-        ScriptArguments: |-
+        ScriptArguments: >
           -ResourceGroupName $(RESOURCE_GROUP_NAME)
           -StorageAccountName $(STORAGE_ACCOUNT_NAME)
           -DomainFqdn $(DOMAIN_FQDN)
