@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Deploying UltraVNC within an Active Directory environment using Group Policy - Virtually Impossible</title><meta property="og:locale" content="en_GB"><meta property="og:type" content="article"><meta property="og:title" content="Deploying UltraVNC within an Active Directory environment using Group Policy - Virtually Impossible"><meta property="og:description" content="Scenario You’ve tried several different VNC applications and have decided UltraVNC meets your humble Remote Support needs. Now you want to centrally deploy and manage UltraVNC in your domain. The default installer creates unwanted shortcuts on the user’s desktop, so you need to modify this before rolling out to all client PCs. In addition to …"><meta property="og:url" content="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/"><meta property="og:site_name" content="Virtually Impossible"><meta property="article:tag" content="Active Directory"><meta property="article:tag" content="Deployment"><meta property="article:tag" content="GPO"><meta property="article:tag" content="Software"><meta property="article:section" content="Microsoft"><meta property="article:published_time" content="2012-05-29T11:58:43+00:00"><meta property="article:modified_time" content="2012-06-06T20:36:11+00:00"><meta property="og:updated_time" content="2012-06-06T20:36:11+00:00"><meta property="og:image" content="http://thehypepipe.co.uk/wp-content/uploads/2012/05/Download-UltraVNC-.msi-installers.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:description" content="Scenario You’ve tried several different VNC applications and have decided UltraVNC meets your humble Remote Support needs. Now you want to centrally deploy and manage UltraVNC in your domain. The default installer creates unwanted shortcuts on the user’s desktop, so you need to modify this before rolling out to all client PCs. In addition to […]"><meta name="twitter:title" content="Deploying UltraVNC within an Active Directory environment using Group Policy - Virtually Impossible"><meta name="twitter:site" content="@adamrushuk"><meta name="twitter:image" content="http://thehypepipe.co.uk/wp-content/uploads/2012/05/Download-UltraVNC-.msi-installers.png"><meta name="twitter:creator" content="@adamrushuk"><script type="application/ld+json" class="yoast-schema-graph yoast-schema-graph--main">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"http://thehypepipe.co.uk/#website","url":"http://thehypepipe.co.uk/","name":"Virtually Impossible","publisher":{"@id":"http://thehypepipe.co.uk/#person"},"potentialAction":{"@type":"SearchAction","target":"http://thehypepipe.co.uk/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#webpage","url":"http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/","inLanguage":"en-GB","name":"Deploying UltraVNC within an Active Directory environment using Group Policy - Virtually Impossible","isPartOf":{"@id":"http://thehypepipe.co.uk/#website"},"image":{"@type":"ImageObject","@id":"http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#primaryimage","url":"https://i0.wp.com/www.virtuallyimpossible.co.uk/wp-content/uploads/2012/05/Download-UltraVNC-.msi-installers.png?fit=807%2C352","width":"807","height":"352"},"primaryImageOfPage":{"@id":"http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#primaryimage"},"datePublished":"2012-05-29T11:58:43+00:00","dateModified":"2012-06-06T20:36:11+00:00"},{"@type":"Article","@id":"http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#article","isPartOf":{"@id":"http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#webpage"},"author":{"@id":"http://thehypepipe.co.uk/author/adminn101/#author","name":"Adam Rush"},"publisher":{"@id":"http://thehypepipe.co.uk/#person"},"headline":"Deploying UltraVNC within an Active Directory environment using Group Policy","datePublished":"2012-05-29T11:58:43+00:00","dateModified":"2012-06-06T20:36:11+00:00","commentCount":"33","mainEntityOfPage":"http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#webpage","keywords":"Active Directory,Deployment,GPO,Software","articleSection":"Microsoft"},{"@type":"Person","@id":"http://thehypepipe.co.uk/author/adminn101/#author","name":"Adam Rush","image":{"@type":"ImageObject","@id":"http://thehypepipe.co.uk/#personlogo","url":"http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g","caption":"Adam Rush"},"description":"Passionate geek.","sameAs":[]}]}</script><link rel="dns-prefetch" href="//s0.wp.com"><link rel="dns-prefetch" href="//secure.gravatar.com"><link rel="dns-prefetch" href="//s.w.org"><script type="text/javascript" data-cfasync="false">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Deploying UltraVNC within an Active Directory environment using Group Policy - Virtually Impossible</title><meta property="og:locale" content="en_GB"><meta property="og:type" content="article"><meta property="og:title" content="Deploying UltraVNC within an Active Directory environment using Group Policy - Virtually Impossible"><meta property="og:description" content="Scenario You’ve tried several different VNC applications and have decided UltraVNC meets your humble Remote Support needs. Now you want to centrally deploy and manage UltraVNC in your domain. The default installer creates unwanted shortcuts on the user’s desktop, so you need to modify this before rolling out to all client PCs. In addition to …"><meta property="og:url" content="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/"><meta property="og:site_name" content="Virtually Impossible"><meta property="article:tag" content="Active Directory"><meta property="article:tag" content="Deployment"><meta property="article:tag" content="GPO"><meta property="article:tag" content="Software"><meta property="article:section" content="Microsoft"><meta property="article:published_time" content="2012-05-29T11:58:43+00:00"><meta property="article:modified_time" content="2012-06-06T20:36:11+00:00"><meta property="og:updated_time" content="2012-06-06T20:36:11+00:00"><meta property="og:image" content="http://www.virtuallyimpossible.co.uk/wp-content/uploads/2012/05/Download-UltraVNC-.msi-installers.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:description" content="Scenario You’ve tried several different VNC applications and have decided UltraVNC meets your humble Remote Support needs. Now you want to centrally deploy and manage UltraVNC in your domain. The default installer creates unwanted shortcuts on the user’s desktop, so you need to modify this before rolling out to all client PCs. In addition to […]"><meta name="twitter:title" content="Deploying UltraVNC within an Active Directory environment using Group Policy - Virtually Impossible"><meta name="twitter:site" content="@adamrushuk"><meta name="twitter:image" content="http://www.virtuallyimpossible.co.uk/wp-content/uploads/2012/05/Download-UltraVNC-.msi-installers.png"><meta name="twitter:creator" content="@adamrushuk"><script type="application/ld+json" class="yoast-schema-graph yoast-schema-graph--main">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"http://www.virtuallyimpossible.co.uk/#website","url":"http://www.virtuallyimpossible.co.uk/","name":"Virtually Impossible","publisher":{"@id":"http://www.virtuallyimpossible.co.uk/#person"},"potentialAction":{"@type":"SearchAction","target":"http://www.virtuallyimpossible.co.uk/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#webpage","url":"http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/","inLanguage":"en-GB","name":"Deploying UltraVNC within an Active Directory environment using Group Policy - Virtually Impossible","isPartOf":{"@id":"http://www.virtuallyimpossible.co.uk/#website"},"image":{"@type":"ImageObject","@id":"http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#primaryimage","url":"https://i0.wp.com/www.virtuallyimpossible.co.uk/wp-content/uploads/2012/05/Download-UltraVNC-.msi-installers.png?fit=807%2C352","width":"807","height":"352"},"primaryImageOfPage":{"@id":"http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#primaryimage"},"datePublished":"2012-05-29T11:58:43+00:00","dateModified":"2012-06-06T20:36:11+00:00"},{"@type":"Article","@id":"http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#article","isPartOf":{"@id":"http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#webpage"},"author":{"@id":"http://www.virtuallyimpossible.co.uk/author/adminn101/#author","name":"Adam Rush"},"publisher":{"@id":"http://www.virtuallyimpossible.co.uk/#person"},"headline":"Deploying UltraVNC within an Active Directory environment using Group Policy","datePublished":"2012-05-29T11:58:43+00:00","dateModified":"2012-06-06T20:36:11+00:00","commentCount":"33","mainEntityOfPage":"http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#webpage","keywords":"Active Directory,Deployment,GPO,Software","articleSection":"Microsoft"},{"@type":"Person","@id":"http://www.virtuallyimpossible.co.uk/author/adminn101/#author","name":"Adam Rush","image":{"@type":"ImageObject","@id":"http://www.virtuallyimpossible.co.uk/#personlogo","url":"http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g","caption":"Adam Rush"},"description":"Passionate geek.","sameAs":[]}]}</script><link rel="dns-prefetch" href="//s0.wp.com"><link rel="dns-prefetch" href="//secure.gravatar.com"><link rel="dns-prefetch" href="//s.w.org"><script type="text/javascript" data-cfasync="false">
 	var mi_version         = '7.6.0';
 	var mi_track_user      = true;
 	var mi_no_track_reason = '';
-	
+
 	var disableStr = 'ga-disable-UA-28931764-1';
 
 	/* Function to detect opted out users */
@@ -21,7 +21,7 @@
 	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
 	  window[disableStr] = true;
 	}
-	
+
 	if ( mi_track_user ) {
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -76,32 +76,32 @@
 			window['__gaTracker'] = __gaTracker;
 					})();
 		}
-</script><link rel="stylesheet" id="yarppWidgetCss-css" href="http://thehypepipe.co.uk/wp-content/plugins/yet-another-related-posts-plugin/style/widget.css" type="text/css" media="all"><link rel="stylesheet" id="enterprise-theme-css" href="http://thehypepipe.co.uk/wp-content/themes/enterprise/style.css" type="text/css" media="all"><link rel="stylesheet" id="wp-block-library-css" href="http://thehypepipe.co.uk/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all"><link rel="stylesheet" id="yarppRelatedCss-css" href="http://thehypepipe.co.uk/wp-content/plugins/yet-another-related-posts-plugin/style/related.css" type="text/css" media="all"><link rel="stylesheet" id="social-logos-css" href="http://thehypepipe.co.uk/wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css" type="text/css" media="all"><link rel="stylesheet" id="jetpack_css-css" href="http://thehypepipe.co.uk/wp-content/plugins/jetpack/css/jetpack.css" type="text/css" media="all"><script type="text/javascript">
+</script><link rel="stylesheet" id="yarppWidgetCss-css" href="http://www.virtuallyimpossible.co.uk/wp-content/plugins/yet-another-related-posts-plugin/style/widget.css" type="text/css" media="all"><link rel="stylesheet" id="enterprise-theme-css" href="http://www.virtuallyimpossible.co.uk/wp-content/themes/enterprise/style.css" type="text/css" media="all"><link rel="stylesheet" id="wp-block-library-css" href="http://www.virtuallyimpossible.co.uk/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all"><link rel="stylesheet" id="yarppRelatedCss-css" href="http://www.virtuallyimpossible.co.uk/wp-content/plugins/yet-another-related-posts-plugin/style/related.css" type="text/css" media="all"><link rel="stylesheet" id="social-logos-css" href="http://www.virtuallyimpossible.co.uk/wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css" type="text/css" media="all"><link rel="stylesheet" id="jetpack_css-css" href="http://www.virtuallyimpossible.co.uk/wp-content/plugins/jetpack/css/jetpack.css" type="text/css" media="all"><script type="text/javascript">
 /* <![CDATA[ */
 var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,exe,js,pdf,ppt,tgz,zip,xls","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"http:\/\/PLACEHOLDER.wpsho","hash_tracking":"false"};
 /* ]]> */
-</script><script type="text/javascript" src="http://thehypepipe.co.uk/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend.min.js"></script><script type="text/javascript" src="http://thehypepipe.co.uk/wp-includes/js/jquery/jquery.js"></script><script type="text/javascript" src="http://thehypepipe.co.uk/wp-includes/js/jquery/jquery-migrate.min.js"></script><link rel="dns-prefetch" href="//v0.wordpress.com"><link rel="dns-prefetch" href="//jetpack.wordpress.com"><link rel="dns-prefetch" href="//s0.wp.com"><link rel="dns-prefetch" href="//s1.wp.com"><link rel="dns-prefetch" href="//s2.wp.com"><link rel="dns-prefetch" href="//public-api.wordpress.com"><link rel="dns-prefetch" href="//0.gravatar.com"><link rel="dns-prefetch" href="//1.gravatar.com"><link rel="dns-prefetch" href="//2.gravatar.com"><link rel="dns-prefetch" href="//i0.wp.com"><link rel="dns-prefetch" href="//i1.wp.com"><link rel="dns-prefetch" href="//i2.wp.com"><link rel="icon" href="http://thehypepipe.co.uk/wp-content/themes/enterprise/images/favicon.ico"><style type="text/css">#header { background: url(http://thehypepipe.co.uk/wp-content/themes/enterprise/images/header.png) no-repeat !important; }</style><style type="text/css" id="syntaxhighlighteranchor"></style></head><body class="post-template-default single single-post postid-647 single-format-standard header-full-width content-sidebar"><div id="wrap"><div id="header"><div class="wrap"><div id="title-area"><p id="title"><a href="http://thehypepipe.co.uk/">Virtually Impossible</a></p><p id="description">Tips, thoughts and notes from the world of IT</p></div></div></div><div id="nav"><div class="wrap"><ul id="menu-1st-navbar" class="menu genesis-nav-menu menu-primary js-superfish"><li id="menu-item-437" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-437"><a href="http://thehypepipe.co.uk/">Home</a></li>
-<li id="menu-item-438" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-438"><a href="http://thehypepipe.co.uk/about/">About</a></li>
-<li id="menu-item-2265" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2265"><a href="http://thehypepipe.co.uk/contact/">Contact</a></li>
-<li class="right search"><form method="get" class="searchform search-form" action="http://thehypepipe.co.uk/" role="search"><input type="text" value="Search this website …" name="s" class="s search-input" onfocus="if ('Search this website …' === this.value) {this.value = '';}" onblur="if ('' === this.value) {this.value = 'Search this website …';}"><input type="submit" class="searchsubmit search-submit" value="Search"></form></li></ul></div></div><div id="subnav"><div class="wrap"><ul id="menu-categories-navbar" class="menu genesis-nav-menu menu-secondary js-superfish"><li id="menu-item-472" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-472"><a href="http://thehypepipe.co.uk/category/cisco/">Cisco</a></li>
-<li id="menu-item-1169" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1169"><a href="http://thehypepipe.co.uk/category/citrix/">Citrix</a></li>
-<li id="menu-item-473" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-473"><a href="http://thehypepipe.co.uk/category/microsoft/">Microsoft</a>
-<ul class="sub-menu"><li id="menu-item-474" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-474"><a href="http://thehypepipe.co.uk/category/microsoft/exchange/">Exchange</a></li>
-	<li id="menu-item-1365" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1365"><a href="http://thehypepipe.co.uk/category/microsoft/sql-server/">SQL Server</a></li>
+</script><script type="text/javascript" src="http://www.virtuallyimpossible.co.uk/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend.min.js"></script><script type="text/javascript" src="http://www.virtuallyimpossible.co.uk/wp-includes/js/jquery/jquery.js"></script><script type="text/javascript" src="http://www.virtuallyimpossible.co.uk/wp-includes/js/jquery/jquery-migrate.min.js"></script><link rel="dns-prefetch" href="//v0.wordpress.com"><link rel="dns-prefetch" href="//jetpack.wordpress.com"><link rel="dns-prefetch" href="//s0.wp.com"><link rel="dns-prefetch" href="//s1.wp.com"><link rel="dns-prefetch" href="//s2.wp.com"><link rel="dns-prefetch" href="//public-api.wordpress.com"><link rel="dns-prefetch" href="//0.gravatar.com"><link rel="dns-prefetch" href="//1.gravatar.com"><link rel="dns-prefetch" href="//2.gravatar.com"><link rel="dns-prefetch" href="//i0.wp.com"><link rel="dns-prefetch" href="//i1.wp.com"><link rel="dns-prefetch" href="//i2.wp.com"><link rel="icon" href="http://www.virtuallyimpossible.co.uk/wp-content/themes/enterprise/images/favicon.ico"><style type="text/css">#header { background: url(http://www.virtuallyimpossible.co.uk/wp-content/themes/enterprise/images/header.png) no-repeat !important; }</style><style type="text/css" id="syntaxhighlighteranchor"></style></head><body class="post-template-default single single-post postid-647 single-format-standard header-full-width content-sidebar"><div id="wrap"><div id="header"><div class="wrap"><div id="title-area"><p id="title"><a href="http://www.virtuallyimpossible.co.uk/">Virtually Impossible</a></p><p id="description">Tips, thoughts and notes from the world of IT</p></div></div></div><div id="nav"><div class="wrap"><ul id="menu-1st-navbar" class="menu genesis-nav-menu menu-primary js-superfish"><li id="menu-item-437" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-437"><a href="http://www.virtuallyimpossible.co.uk/">Home</a></li>
+<li id="menu-item-438" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-438"><a href="http://www.virtuallyimpossible.co.uk/about/">About</a></li>
+<li id="menu-item-2265" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2265"><a href="http://www.virtuallyimpossible.co.uk/contact/">Contact</a></li>
+<li class="right search"><form method="get" class="searchform search-form" action="http://www.virtuallyimpossible.co.uk/" role="search"><input type="text" value="Search this website …" name="s" class="s search-input" onfocus="if ('Search this website …' === this.value) {this.value = '';}" onblur="if ('' === this.value) {this.value = 'Search this website …';}"><input type="submit" class="searchsubmit search-submit" value="Search"></form></li></ul></div></div><div id="subnav"><div class="wrap"><ul id="menu-categories-navbar" class="menu genesis-nav-menu menu-secondary js-superfish"><li id="menu-item-472" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-472"><a href="http://www.virtuallyimpossible.co.uk/category/cisco/">Cisco</a></li>
+<li id="menu-item-1169" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1169"><a href="http://www.virtuallyimpossible.co.uk/category/citrix/">Citrix</a></li>
+<li id="menu-item-473" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-473"><a href="http://www.virtuallyimpossible.co.uk/category/microsoft/">Microsoft</a>
+<ul class="sub-menu"><li id="menu-item-474" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-474"><a href="http://www.virtuallyimpossible.co.uk/category/microsoft/exchange/">Exchange</a></li>
+	<li id="menu-item-1365" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1365"><a href="http://www.virtuallyimpossible.co.uk/category/microsoft/sql-server/">SQL Server</a></li>
 </ul></li>
-<li id="menu-item-760" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-760"><a href="http://thehypepipe.co.uk/category/misc/">Misc</a>
-<ul class="sub-menu"><li id="menu-item-581" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-581"><a href="http://thehypepipe.co.uk/category/mobile/">Mobile</a></li>
-	<li id="menu-item-476" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-476"><a href="http://thehypepipe.co.uk/category/printing/">Printing</a></li>
-	<li id="menu-item-477" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-477"><a href="http://thehypepipe.co.uk/category/productivity/">Productivity</a></li>
-	<li id="menu-item-478" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-478"><a href="http://thehypepipe.co.uk/category/programming/">Programming</a></li>
+<li id="menu-item-760" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-760"><a href="http://www.virtuallyimpossible.co.uk/category/misc/">Misc</a>
+<ul class="sub-menu"><li id="menu-item-581" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-581"><a href="http://www.virtuallyimpossible.co.uk/category/mobile/">Mobile</a></li>
+	<li id="menu-item-476" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-476"><a href="http://www.virtuallyimpossible.co.uk/category/printing/">Printing</a></li>
+	<li id="menu-item-477" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-477"><a href="http://www.virtuallyimpossible.co.uk/category/productivity/">Productivity</a></li>
+	<li id="menu-item-478" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-478"><a href="http://www.virtuallyimpossible.co.uk/category/programming/">Programming</a></li>
 </ul></li>
-<li id="menu-item-475" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-475"><a href="http://thehypepipe.co.uk/category/networking/">Networking</a></li>
-<li id="menu-item-757" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-757"><a href="http://thehypepipe.co.uk/category/storage/">Storage</a></li>
-<li id="menu-item-480" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-480"><a href="http://thehypepipe.co.uk/category/vmware/">VMware</a>
-<ul class="sub-menu"><li id="menu-item-479" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-479"><a href="http://thehypepipe.co.uk/category/veeam/">Veeam</a></li>
+<li id="menu-item-475" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-475"><a href="http://www.virtuallyimpossible.co.uk/category/networking/">Networking</a></li>
+<li id="menu-item-757" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-757"><a href="http://www.virtuallyimpossible.co.uk/category/storage/">Storage</a></li>
+<li id="menu-item-480" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-480"><a href="http://www.virtuallyimpossible.co.uk/category/vmware/">VMware</a>
+<ul class="sub-menu"><li id="menu-item-479" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-479"><a href="http://www.virtuallyimpossible.co.uk/category/veeam/">Veeam</a></li>
 </ul></li>
 </ul></div></div><div id="inner"><div id="content-sidebar-wrap"><div id="content" class="hfeed"><div class="post-647 post type-post status-publish format-standard hentry category-microsoft tag-active-directory tag-deployment tag-gpo tag-software entry"><h1 class="entry-title">Deploying UltraVNC within an Active Directory environment using Group Policy</h1>
-<div class="post-info"><span class="date published time" title="2012-05-29T11:58:43+00:00">29 May 2012</span>  by <span class="author vcard"><span class="fn"><a href="http://thehypepipe.co.uk/author/adminn101/" rel="author">Adam Rush</a></span></span>  </div><div class="entry-content"><h2>Scenario</h2>
+<div class="post-info"><span class="date published time" title="2012-05-29T11:58:43+00:00">29 May 2012</span>  by <span class="author vcard"><span class="fn"><a href="http://www.virtuallyimpossible.co.uk/author/adminn101/" rel="author">Adam Rush</a></span></span>  </div><div class="entry-content"><h2>Scenario</h2>
 <p>You’ve tried several different VNC applications and have decided UltraVNC meets your humble Remote Support needs. Now you want to centrally deploy and manage UltraVNC in your domain.</p>
 <p>The default installer creates unwanted shortcuts on the user’s desktop, so you need to modify this before rolling out to all client PCs. In addition to this, there are separate installers for 32-bit and 64-bit PCs, so this will have to be accounted for.</p>
 <p>Here is how to achieve remote desktop nirvana using UltraVNC:</p>
@@ -124,7 +124,7 @@ var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions
 <li>Confirm you can connect to the test computer:<br><a href="https://i2.wp.com/www.virtuallyimpossible.co.uk/wp-content/uploads/2012/05/UltraVNC-Test-Session.png"><img class="alignnone size-full wp-image-650" title="UltraVNC Test Session" src="https://i2.wp.com/www.virtuallyimpossible.co.uk/wp-content/uploads/2012/05/UltraVNC-Test-Session.png?resize=481%2C749" alt="" width="481" height="749" srcset="https://i2.wp.com/www.virtuallyimpossible.co.uk/wp-content/uploads/2012/05/UltraVNC-Test-Session.png?w=481 481w,https://i2.wp.com/www.virtuallyimpossible.co.uk/wp-content/uploads/2012/05/UltraVNC-Test-Session.png?resize=192%2C300 192w" sizes="(max-width: 481px) 100vw, 481px" data-recalc-dims="1"></a></li>
 </ol><h3 id="a2">Modifying the UltraVNC installer to exclude desktop/start menu shortcuts</h3>
 <p>In this step we’re going to stop the UltraVNC shortcuts from being added to the user’s desktop.</p>
-<ol><li>Download and install <a href="http://thehypepipe.co.uk/wp-content/uploads/2012/05/Orca.zip">Orca</a>, or alternatively you can try <a href="http://www.instedit.com/">http://www.instedit.com</a></li>
+<ol><li>Download and install <a href="http://www.virtuallyimpossible.co.uk/wp-content/uploads/2012/05/Orca.zip">Orca</a>, or alternatively you can try <a href="http://www.instedit.com/">http://www.instedit.com</a></li>
 <li>Open <strong>UltraVnc_10962_x86.msi</strong> within Orca.</li>
 <li>Select the <strong>Shortcut</strong> table on the left, select all entries on the right, then select <strong>Drop Row(s)</strong> from the <strong>Tables</strong> menu:<br><a href="https://i0.wp.com/www.virtuallyimpossible.co.uk/wp-content/uploads/2012/05/Removing-shortcuts-using-Orca.png"><img class="alignnone size-full wp-image-664" title="Removing shortcuts using Orca" src="https://i0.wp.com/www.virtuallyimpossible.co.uk/wp-content/uploads/2012/05/Removing-shortcuts-using-Orca.png?resize=600%2C407" alt="" width="600" height="407" srcset="https://i0.wp.com/www.virtuallyimpossible.co.uk/wp-content/uploads/2012/05/Removing-shortcuts-using-Orca.png?w=733 733w,https://i0.wp.com/www.virtuallyimpossible.co.uk/wp-content/uploads/2012/05/Removing-shortcuts-using-Orca.png?resize=300%2C203 300w,https://i0.wp.com/www.virtuallyimpossible.co.uk/wp-content/uploads/2012/05/Removing-shortcuts-using-Orca.png?resize=600%2C406 600w" sizes="(max-width: 600px) 100vw, 600px" data-recalc-dims="1"></a></li>
 <li>Click <strong>OK</strong> to confirm removal:<br><a href="https://i0.wp.com/www.virtuallyimpossible.co.uk/wp-content/uploads/2012/05/Orca-row-removal-confirmation.png"><img class="alignnone size-full wp-image-665" title="Orca row removal confirmation" src="https://i0.wp.com/www.virtuallyimpossible.co.uk/wp-content/uploads/2012/05/Orca-row-removal-confirmation.png?resize=347%2C127" alt="" width="347" height="127" srcset="https://i0.wp.com/www.virtuallyimpossible.co.uk/wp-content/uploads/2012/05/Orca-row-removal-confirmation.png?w=347 347w,https://i0.wp.com/www.virtuallyimpossible.co.uk/wp-content/uploads/2012/05/Orca-row-removal-confirmation.png?resize=300%2C109 300w" sizes="(max-width: 347px) 100vw, 347px" data-recalc-dims="1"></a></li>
@@ -175,7 +175,7 @@ If an error occurs at this point, make sure the <strong>Remote Registry</strong>
 <li>Enter a new <strong>name</strong>, <strong>description</strong>, then click <strong>add</strong>.</li>
 <li>Leaving the default namespace, enter <strong>SELECT * FROM Win32_Processor WHERE AddressWidth=’64’:<br><a href="https://i1.wp.com/www.virtuallyimpossible.co.uk/wp-content/uploads/2012/05/New-WMI-Filter.png"><img class="alignnone size-full wp-image-716" title="New WMI Filter" src="https://i1.wp.com/www.virtuallyimpossible.co.uk/wp-content/uploads/2012/05/New-WMI-Filter.png?resize=475%2C341" alt="" width="475" height="341" srcset="https://i1.wp.com/www.virtuallyimpossible.co.uk/wp-content/uploads/2012/05/New-WMI-Filter.png?w=475 475w,https://i1.wp.com/www.virtuallyimpossible.co.uk/wp-content/uploads/2012/05/New-WMI-Filter.png?resize=300%2C215 300w" sizes="(max-width: 475px) 100vw, 475px" data-recalc-dims="1"></a><br></strong></li>
 <li>To target 32-bit computers, use <strong>Select * from win32_processor where addresswidth=’32’</strong>.</li>
-<li>If you need to troubleshoot, you can test your WQL queries using <a href="http://thehypepipe.co.uk/wp-content/uploads/2012/05/WMICodeCreator.zip">WMICodeCreator</a>.</li>
+<li>If you need to troubleshoot, you can test your WQL queries using <a href="http://www.virtuallyimpossible.co.uk/wp-content/uploads/2012/05/WMICodeCreator.zip">WMICodeCreator</a>.</li>
 </ol></div>
 <h3 id="a10">Setting the GPO scope</h3>
 <p>We need to set the scope so only the relevant computers will get the UltraVNC software.</p>
@@ -191,17 +191,17 @@ If an error occurs at this point, make sure the <strong>Remote Registry</strong>
 <p>Most of the above only covers targeting 64-bit computers, so don’t forget to follow similar steps for 32-bit computers.</p>
 <p>Good luck!</p>
 <p>A massive shout out to my colleague Shaun who got this working first 🙂</p>
-<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><div class="sd-content"><ul><li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-647" class="share-linkedin sd-button share-icon" href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-647" class="share-twitter sd-button share-icon" href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li><a href="#" class="sharing-anchor sd-button share-more"><span>More</span></a></li><li class="share-end"></ul><div class="sharing-hidden"><div class="inner" style="display: none;"><ul><li class="share-reddit"><a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a></li><li class="share-print"><a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon" href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#print" target="_blank" title="Click to print"><span>Print</span></a></li><li class="share-end"><li class="share-tumblr"><a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon" href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a></li><li class="share-email"><a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-end"><li class="share-pinterest"><a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-647" class="share-pinterest sd-button share-icon" href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-647" class="share-facebook sd-button share-icon" href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li class="share-end"><li class="share-end"></ul></div></div></div></div></div><div class="yarpp-related">
-<p><strong>Related Posts:</strong></p><ol><li><a href="http://thehypepipe.co.uk/how-to-delete-a-protected-ou-in-active-directory/" rel="bookmark" title="How to delete a protected OU in Active Directory">How to delete a protected OU in Active Directory </a></li>
-<li><a href="http://thehypepipe.co.uk/how-to-use-the-group-policy-results-wizard/" rel="bookmark" title="How to use the Group Policy Results Wizard">How to use the Group Policy Results Wizard </a></li>
-<li><a href="http://thehypepipe.co.uk/updating-all-local-administrator-passwords-across-the-domain/" rel="bookmark" title="Updating all Local Administrator passwords across the domain">Updating all Local Administrator passwords across the domain </a></li>
-<li><a href="http://thehypepipe.co.uk/how-to-create-a-group-policy-central-store/" rel="bookmark" title="How to create a Group Policy Central Store">How to create a Group Policy Central Store </a></li>
-<li><a href="http://thehypepipe.co.uk/how-to-confirm-if-group-policy-preference-client-side-extensions-are-installed-in-winxp/" rel="bookmark" title="How to confirm if Group Policy Preference Client Side Extensions are installed in WinXP">How to confirm if Group Policy Preference Client Side Extensions are installed in WinXP </a></li>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><div class="sd-content"><ul><li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-647" class="share-linkedin sd-button share-icon" href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-647" class="share-twitter sd-button share-icon" href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li><a href="#" class="sharing-anchor sd-button share-more"><span>More</span></a></li><li class="share-end"></ul><div class="sharing-hidden"><div class="inner" style="display: none;"><ul><li class="share-reddit"><a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a></li><li class="share-print"><a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon" href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#print" target="_blank" title="Click to print"><span>Print</span></a></li><li class="share-end"><li class="share-tumblr"><a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon" href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a></li><li class="share-email"><a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-end"><li class="share-pinterest"><a rel="nofollow noopener noreferrer" data-shared="sharing-pinterest-647" class="share-pinterest sd-button share-icon" href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-647" class="share-facebook sd-button share-icon" href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li class="share-end"><li class="share-end"></ul></div></div></div></div></div><div class="yarpp-related">
+<p><strong>Related Posts:</strong></p><ol><li><a href="http://www.virtuallyimpossible.co.uk/how-to-delete-a-protected-ou-in-active-directory/" rel="bookmark" title="How to delete a protected OU in Active Directory">How to delete a protected OU in Active Directory </a></li>
+<li><a href="http://www.virtuallyimpossible.co.uk/how-to-use-the-group-policy-results-wizard/" rel="bookmark" title="How to use the Group Policy Results Wizard">How to use the Group Policy Results Wizard </a></li>
+<li><a href="http://www.virtuallyimpossible.co.uk/updating-all-local-administrator-passwords-across-the-domain/" rel="bookmark" title="Updating all Local Administrator passwords across the domain">Updating all Local Administrator passwords across the domain </a></li>
+<li><a href="http://www.virtuallyimpossible.co.uk/how-to-create-a-group-policy-central-store/" rel="bookmark" title="How to create a Group Policy Central Store">How to create a Group Policy Central Store </a></li>
+<li><a href="http://www.virtuallyimpossible.co.uk/how-to-confirm-if-group-policy-preference-client-side-extensions-are-installed-in-winxp/" rel="bookmark" title="How to confirm if Group Policy Preference Client Side Extensions are installed in WinXP">How to confirm if Group Policy Preference Client Side Extensions are installed in WinXP </a></li>
 </ol></div>
 
-</div><div class="post-meta"><span class="categories">Filed Under: <a href="http://thehypepipe.co.uk/category/microsoft/" rel="category tag">Microsoft</a></span> <span class="tags">Tagged With: <a href="http://thehypepipe.co.uk/tag/active-directory/" rel="tag">Active Directory</a>, <a href="http://thehypepipe.co.uk/tag/deployment/" rel="tag">Deployment</a>, <a href="http://thehypepipe.co.uk/tag/gpo/" rel="tag">GPO</a>, <a href="http://thehypepipe.co.uk/tag/software/" rel="tag">Software</a></span></div></div><div id="comments"><h3>Comments</h3><ol class="comment-list"><li class="comment even thread-even depth-1" id="comment-751">
+</div><div class="post-meta"><span class="categories">Filed Under: <a href="http://www.virtuallyimpossible.co.uk/category/microsoft/" rel="category tag">Microsoft</a></span> <span class="tags">Tagged With: <a href="http://www.virtuallyimpossible.co.uk/tag/active-directory/" rel="tag">Active Directory</a>, <a href="http://www.virtuallyimpossible.co.uk/tag/deployment/" rel="tag">Deployment</a>, <a href="http://www.virtuallyimpossible.co.uk/tag/gpo/" rel="tag">GPO</a>, <a href="http://www.virtuallyimpossible.co.uk/tag/software/" rel="tag">Software</a></span></div></div><div id="comments"><h3>Comments</h3><ol class="comment-list"><li class="comment even thread-even depth-1" id="comment-751">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
 				<img alt="" src="https://1.gravatar.com/avatar/aa96422557aa3e6403e55f1131770a09?s=48&d=identicon&r=g" srcset="http://1.gravatar.com/avatar/aa96422557aa3e6403e55f1131770a09?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn">Matt</cite>
@@ -210,12 +210,12 @@ If an error occurs at this point, make sure the <strong>Remote Registry</strong>
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-751">13 June 2012 at 21:37</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-751">13 June 2012 at 21:37</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>Thanks so much for posting this–quite helpful and has worked very well for me so far (in the testing stage right now, modified the steps a little for our environment). This is by far the most complete and well written instructions I have seen on how to do this.</p>
 		</div>
 
@@ -224,21 +224,21 @@ If an error occurs at this point, make sure the <strong>Remote Registry</strong>
 
 		<ul class="children"><li class="comment byuser comment-author-adminn101 bypostauthor odd alt depth-2" id="comment-762">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
-				<img alt="" src="https://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://thehypepipe.co.uk" rel="external nofollow" class="url">Adam Rush</a></cite>
+				<img alt="" src="https://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://www.virtuallyimpossible.co.uk" rel="external nofollow" class="url">Adam Rush</a></cite>
 				<span class="says">
 				says				</span>
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-762">14 June 2012 at 22:24</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-762">14 June 2012 at 22:24</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>No problem Matt. It took much longer than I thought to document the steps, but it’s a great reference for me, and can be applied to many different applications.</p>
 <p>Glad you found it useful 🙂</p>
 		</div>
@@ -251,7 +251,7 @@ If an error occurs at this point, make sure the <strong>Remote Registry</strong>
 
 	<li class="comment even thread-odd thread-alt depth-1" id="comment-2526">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
 				<img alt="" src="https://0.gravatar.com/avatar/cace826f740126822e27f39662ba1973?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/cace826f740126822e27f39662ba1973?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn">Stephen B</cite>
@@ -260,12 +260,12 @@ If an error occurs at this point, make sure the <strong>Remote Registry</strong>
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-2526">31 August 2012 at 15:52</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-2526">31 August 2012 at 15:52</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>Adam – thanks for this post!</p>
 <p>However, I keep getting errors when trying to push this out to a couple of test VMs; the software doesn’t install! The .ini file deployment policy works, as does everything else, with the exception of the actual MSI install.</p>
 <p>Can you help?</p>
@@ -277,21 +277,21 @@ If an error occurs at this point, make sure the <strong>Remote Registry</strong>
 
 		<ul class="children"><li class="comment byuser comment-author-adminn101 bypostauthor odd alt depth-2" id="comment-2536">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
-				<img alt="" src="https://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://thehypepipe.co.uk" rel="external nofollow" class="url">Adam Rush</a></cite>
+				<img alt="" src="https://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://www.virtuallyimpossible.co.uk" rel="external nofollow" class="url">Adam Rush</a></cite>
 				<span class="says">
 				says				</span>
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-2536">1 September 2012 at 09:09</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-2536">1 September 2012 at 09:09</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>I can’t speak from experience, as I had no errors during deployment.</p>
 <p>Are you sure you’re targeting the correct .msi with the correct architecture (x86/x64)?<br>
 What are the errors you’re getting?</p>
@@ -302,7 +302,7 @@ What are the errors you’re getting?</p>
 
 		<ul class="children"><li class="comment even depth-3" id="comment-2589">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
 				<img alt="" src="https://0.gravatar.com/avatar/cace826f740126822e27f39662ba1973?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/cace826f740126822e27f39662ba1973?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn">Stephen B</cite>
@@ -311,12 +311,12 @@ What are the errors you’re getting?</p>
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-2589">3 September 2012 at 15:13</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-2589">3 September 2012 at 15:13</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>It’s alright, I figured out some extra settings that needed enabling before it pulled the software onto my test machines.</p>
 <p>1. Via GPO, I needed to enable the setting “Always wait for the network at computer startup and logon – Enabled” in Computer Settings / Administrative Templates / System / Logon<br>
 2. I also removed the whole “Group Policy” key here: HKLM/SOFTWARE/Microsoft/Windows/CurrentVersion/</p>
@@ -330,21 +330,21 @@ What are the errors you’re getting?</p>
 
 		<ul class="children"><li class="comment byuser comment-author-adminn101 bypostauthor odd alt depth-4" id="comment-2592">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
-				<img alt="" src="https://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://thehypepipe.co.uk" rel="external nofollow" class="url">Adam Rush</a></cite>
+				<img alt="" src="https://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://www.virtuallyimpossible.co.uk" rel="external nofollow" class="url">Adam Rush</a></cite>
 				<span class="says">
 				says				</span>
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-2592">3 September 2012 at 20:33</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-2592">3 September 2012 at 20:33</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>Nice work Steve, glad you figured it out, it’s not an easy setup is it!</p>
 		</div>
 
@@ -355,7 +355,7 @@ What are the errors you’re getting?</p>
 
 	<li class="comment even depth-4" id="comment-3543">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
 				<img alt="" src="https://2.gravatar.com/avatar/e059ffdb21ce64728a8a04d2b96740c7?s=48&d=identicon&r=g" srcset="http://2.gravatar.com/avatar/e059ffdb21ce64728a8a04d2b96740c7?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn">Joe</cite>
@@ -364,12 +364,12 @@ What are the errors you’re getting?</p>
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3543">26 October 2012 at 16:08</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3543">26 October 2012 at 16:08</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>Similarly to Stephen B, I’m having problems with the .ini file but only on WinXP. Turns out that you need MS Hotfix KB974266 to allow the file copy/replace to work on XP…works fine with Win7.</p>
 		</div>
 
@@ -378,21 +378,21 @@ What are the errors you’re getting?</p>
 
 		<ul class="children"><li class="comment byuser comment-author-adminn101 bypostauthor odd alt depth-5" id="comment-3547">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
-				<img alt="" src="https://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://thehypepipe.co.uk" rel="external nofollow" class="url">Adam Rush</a></cite>
+				<img alt="" src="https://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://www.virtuallyimpossible.co.uk" rel="external nofollow" class="url">Adam Rush</a></cite>
 				<span class="says">
 				says				</span>
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3547">26 October 2012 at 19:30</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3547">26 October 2012 at 19:30</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>Good point Stephen. I take it for granted that everyone knows to install client side extensions with XP. I should know better, as it stumped me for ages when I first came across that issue! lol</p>
 		</div>
 
@@ -405,7 +405,7 @@ What are the errors you’re getting?</p>
 
 	<li class="comment even depth-3" id="comment-3711">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
 				<img alt="" src="https://0.gravatar.com/avatar/6930d7a959a6b790a7de69f88c64b558?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/6930d7a959a6b790a7de69f88c64b558?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://www.trtechit.com" rel="external nofollow" class="url">Chip Timm</a></cite>
@@ -414,12 +414,12 @@ What are the errors you’re getting?</p>
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3711">29 October 2013 at 17:16</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3711">29 October 2013 at 17:16</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>It worked great for me, just make sure that in the WMI query you make sure to change the ’64’ or ’32’ as specified in the write up to “64” or “32”.  This is the only place I was having troubles making it work.</p>
 <p>Great write-up though!</p>
 <p>Chip Timm<br><a href="http://www.trtechit.com" rel="nofollow">http://www.trtechit.com</a></p>
@@ -430,21 +430,21 @@ What are the errors you’re getting?</p>
 
 		<ul class="children"><li class="comment byuser comment-author-adminn101 bypostauthor odd alt depth-4" id="comment-3712">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
-				<img alt="" src="https://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://thehypepipe.co.uk" rel="external nofollow" class="url">Adam Rush</a></cite>
+				<img alt="" src="https://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://www.virtuallyimpossible.co.uk" rel="external nofollow" class="url">Adam Rush</a></cite>
 				<span class="says">
 				says				</span>
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3712">30 October 2013 at 13:26</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3712">30 October 2013 at 13:26</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>Thanks Chip!</p>
 		</div>
 
@@ -453,7 +453,7 @@ What are the errors you’re getting?</p>
 
 		<ul class="children"><li class="comment even depth-5" id="comment-7983">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
 				<img alt="" src="https://1.gravatar.com/avatar/7f2a6a1046bb981f018f5b7e2be3e511?s=48&d=identicon&r=g" srcset="http://1.gravatar.com/avatar/7f2a6a1046bb981f018f5b7e2be3e511?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn">michael</cite>
@@ -462,12 +462,12 @@ What are the errors you’re getting?</p>
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-7983">17 July 2014 at 17:45</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-7983">17 July 2014 at 17:45</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>same issue. double checked and fixed my filters. Also, be sure you dont have a higher gpo checked as Enforced. it killed everything below it.</p>
 		</div>
 
@@ -479,7 +479,7 @@ What are the errors you’re getting?</p>
 
 	<li class="comment odd alt depth-4" id="comment-38094">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
 				<img alt="" src="https://1.gravatar.com/avatar/a1e2960d953fa0a0468626175e4cc3f3?s=48&d=identicon&r=g" srcset="http://1.gravatar.com/avatar/a1e2960d953fa0a0468626175e4cc3f3?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn">Raghavendra TS</cite>
@@ -488,12 +488,12 @@ What are the errors you’re getting?</p>
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-38094">27 November 2014 at 14:00</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-38094">27 November 2014 at 14:00</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>Yes. Changing WMI query from ’64’ to “64” fixed my issue. The software is installing perfectly now. Thanks for a very help full detailed document shared with us.</p>
 		</div>
 
@@ -507,7 +507,7 @@ What are the errors you’re getting?</p>
 
 	<li class="comment even thread-even depth-1" id="comment-2964">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
 				<img alt="" src="https://0.gravatar.com/avatar/6b9995d79fe0c2935c2c5a4f9e208bbc?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/6b9995d79fe0c2935c2c5a4f9e208bbc?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://www.conklincomputing.com" rel="external nofollow" class="url">Brian E. Conklin</a></cite>
@@ -516,12 +516,12 @@ What are the errors you’re getting?</p>
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-2964">24 September 2012 at 18:00</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-2964">24 September 2012 at 18:00</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>Great tutorial! Walks you through this exact item, but also gives you a starting point for other Group policy deployment settings and steps. Well done!</p>
 		</div>
 
@@ -530,21 +530,21 @@ What are the errors you’re getting?</p>
 
 		<ul class="children"><li class="comment byuser comment-author-adminn101 bypostauthor odd alt depth-2" id="comment-2965">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
-				<img alt="" src="https://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://thehypepipe.co.uk" rel="external nofollow" class="url">Adam Rush</a></cite>
+				<img alt="" src="https://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://www.virtuallyimpossible.co.uk" rel="external nofollow" class="url">Adam Rush</a></cite>
 				<span class="says">
 				says				</span>
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-2965">24 September 2012 at 18:07</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-2965">24 September 2012 at 18:07</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>Glad you found it useful old bean!</p>
 		</div>
 
@@ -556,7 +556,7 @@ What are the errors you’re getting?</p>
 
 	<li class="comment even thread-odd thread-alt depth-1" id="comment-3569">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
 				<img alt="" src="https://0.gravatar.com/avatar/90dbe710e398664d0d924738cd9bba7e?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/90dbe710e398664d0d924738cd9bba7e?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn">andyD</cite>
@@ -565,12 +565,12 @@ What are the errors you’re getting?</p>
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3569">21 November 2012 at 23:34</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3569">21 November 2012 at 23:34</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>Had 2 q’s while reading this,<br>
 1. the registry on the test machine does not have an ORL\WinVNC directory or keys (I don’t have ORL at all). I tried reinstalling but still not there, can I make them or should it be setup through UVNC on install?<br>
 2. if I can make the registry keys, or somehow get them installed, will that require having the test machine on in order for machines to get the full GPO or is it just copying the registry settings into the .msi?</p>
@@ -581,7 +581,7 @@ What are the errors you’re getting?</p>
 
 		<ul class="children"><li class="comment odd alt depth-2" id="comment-3570">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
 				<img alt="" src="https://0.gravatar.com/avatar/90dbe710e398664d0d924738cd9bba7e?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/90dbe710e398664d0d924738cd9bba7e?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn">andyD</cite>
@@ -590,12 +590,12 @@ What are the errors you’re getting?</p>
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3570">22 November 2012 at 02:04</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3570">22 November 2012 at 02:04</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>I don’t think the registry keys are required since I’m setting it to save settings to the .ini and not to the registry</p>
 <p>But I can’t seem to get the password to install, it keeps resetting to 000000000000000, I’ve tried removing from the GPO, reinstalling manually to get a fresh .ini but haven’t had any real luck. I’ve tried adding Stephen B’s “Always wait at logon” setting and experimented with “Update” instead of “Replace” but it doesn’t want to transfer the admin password</p>
 		</div>
@@ -605,21 +605,21 @@ What are the errors you’re getting?</p>
 
 		<ul class="children"><li class="comment byuser comment-author-adminn101 bypostauthor even depth-3" id="comment-3572">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
-				<img alt="" src="https://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://thehypepipe.co.uk" rel="external nofollow" class="url">Adam Rush</a></cite>
+				<img alt="" src="https://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://www.virtuallyimpossible.co.uk" rel="external nofollow" class="url">Adam Rush</a></cite>
 				<span class="says">
 				says				</span>
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3572">22 November 2012 at 20:11</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3572">22 November 2012 at 20:11</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>That’s great if you can get it all working without importing reg keys, but I had to use both reg keys and .ini files.</p>
 <p>I’m sorry I can’t help further with this as I did this quite a while back now, and my brain has pushed this stuff aside for new info. Good luck 🙂</p>
 		</div>
@@ -632,22 +632,22 @@ What are the errors you’re getting?</p>
 
 	<li class="comment byuser comment-author-adminn101 bypostauthor odd alt depth-2" id="comment-3571">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
-				<img alt="" src="https://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://thehypepipe.co.uk" rel="external nofollow" class="url">Adam Rush</a></cite>
+				<img alt="" src="https://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://www.virtuallyimpossible.co.uk" rel="external nofollow" class="url">Adam Rush</a></cite>
 				<span class="says">
 				says				</span>
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3571">22 November 2012 at 20:06</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3571">22 November 2012 at 20:06</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
-			<p>If you can’t find the ORL folder in the registry, make sure you’re selecting your test computer in Step 3 in this section: <a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#a8" rel="nofollow">http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#a8</a> </p>
+
+			<p>If you can’t find the ORL folder in the registry, make sure you’re selecting your test computer in Step 3 in this section: <a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#a8" rel="nofollow">http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#a8</a> </p>
 <p>No, the test computer will not need to be turned on forever; just whilst you import the reg keys into the GPO.</p>
 		</div>
 
@@ -659,7 +659,7 @@ What are the errors you’re getting?</p>
 
 	<li class="comment even thread-even depth-1" id="comment-3600">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
 				<img alt="" src="https://0.gravatar.com/avatar/68d62952a4202de3d3a9a9ddec1ae799?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/68d62952a4202de3d3a9a9ddec1ae799?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn">tygrus</cite>
@@ -668,12 +668,12 @@ What are the errors you’re getting?</p>
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3600">14 March 2013 at 03:06</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3600">14 March 2013 at 03:06</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>Cannot find what you are talking about. “Right-click > Edit on the GPO and navigate to Computer Configuration > Policies > Software Settings > Software Installation.”<br>
 Directions from this point on are useless.  Win2003 AD, looking at server.</p>
 		</div>
@@ -683,21 +683,21 @@ Directions from this point on are useless.  Win2003 AD, looking at server.</p>
 
 		<ul class="children"><li class="comment byuser comment-author-adminn101 bypostauthor odd alt depth-2" id="comment-3604">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
-				<img alt="" src="https://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://thehypepipe.co.uk" rel="external nofollow" class="url">Adam Rush</a></cite>
+				<img alt="" src="https://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://www.virtuallyimpossible.co.uk" rel="external nofollow" class="url">Adam Rush</a></cite>
 				<span class="says">
 				says				</span>
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3604">14 March 2013 at 09:04</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3604">14 March 2013 at 09:04</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>Sorry to hear you’re struggling with the steps I provided.<br>
 I mainly post for my own reference, so a basic broad knowledge is assumed at times.</p>
 <p>Where are you getting stuck, creating a Group Policy Object?<br>
@@ -712,7 +712,7 @@ If so, this link may help: <a href="http://www.windowsecurity.com/articles-tutor
 
 	<li class="comment even thread-odd thread-alt depth-1" id="comment-3605">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
 				<img alt="" src="https://1.gravatar.com/avatar/15c25d7fa41f2130e43abf8f0efb1614?s=48&d=identicon&r=g" srcset="http://1.gravatar.com/avatar/15c25d7fa41f2130e43abf8f0efb1614?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn">rossdav</cite>
@@ -721,12 +721,12 @@ If so, this link may help: <a href="http://www.windowsecurity.com/articles-tutor
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3605">14 March 2013 at 14:01</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3605">14 March 2013 at 14:01</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>Thanks for this, very helpful, I also needed to add a firewall exception for vncserver.exe to my GPO to get my clients working as the msi install didnt seem to do that automatically. Other than that the whole thing was flawless. Thank you!</p>
 		</div>
 
@@ -735,21 +735,21 @@ If so, this link may help: <a href="http://www.windowsecurity.com/articles-tutor
 
 		<ul class="children"><li class="comment byuser comment-author-adminn101 bypostauthor odd alt depth-2" id="comment-3606">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
-				<img alt="" src="https://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://thehypepipe.co.uk" rel="external nofollow" class="url">Adam Rush</a></cite>
+				<img alt="" src="https://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://www.virtuallyimpossible.co.uk" rel="external nofollow" class="url">Adam Rush</a></cite>
 				<span class="says">
 				says				</span>
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3606">16 March 2013 at 14:09</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3606">16 March 2013 at 14:09</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>Yeah, good point. I may have had my firewall turned off whilst doing this.</p>
 		</div>
 
@@ -761,7 +761,7 @@ If so, this link may help: <a href="http://www.windowsecurity.com/articles-tutor
 
 	<li class="comment even thread-even depth-1" id="comment-3641">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
 				<img alt="" src="https://0.gravatar.com/avatar/c7848f438de6632d0baa107b81260a5e?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/c7848f438de6632d0baa107b81260a5e?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="https://gravatar.com/helmutmadeiro" rel="external nofollow" class="url">Helmut Maideiro</a></cite>
@@ -770,12 +770,12 @@ If so, this link may help: <a href="http://www.windowsecurity.com/articles-tutor
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3641">12 April 2013 at 17:24</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3641">12 April 2013 at 17:24</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>muito bom</p>
 		</div>
 
@@ -784,7 +784,7 @@ If so, this link may help: <a href="http://www.windowsecurity.com/articles-tutor
 
 		<ul class="children"><li class="comment odd alt depth-2" id="comment-3701">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
 				<img alt="" src="https://1.gravatar.com/avatar/4007dcf7bc7cc9cc6617c1d5332216ac?s=48&d=identicon&r=g" srcset="http://1.gravatar.com/avatar/4007dcf7bc7cc9cc6617c1d5332216ac?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn">Ken</cite>
@@ -793,12 +793,12 @@ If so, this link may help: <a href="http://www.windowsecurity.com/articles-tutor
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3701">25 October 2013 at 01:20</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3701">25 October 2013 at 01:20</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>Yes no need to use the registry since the latest version have all passwords in the config file, I used the system start up script in the GPO  to copy the config. file over since your GPO copies it before the installation.</p>
 		</div>
 
@@ -807,21 +807,21 @@ If so, this link may help: <a href="http://www.windowsecurity.com/articles-tutor
 
 		<ul class="children"><li class="comment byuser comment-author-adminn101 bypostauthor even depth-3" id="comment-3710">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
-				<img alt="" src="https://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://thehypepipe.co.uk" rel="external nofollow" class="url">Adam Rush</a></cite>
+				<img alt="" src="https://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://www.virtuallyimpossible.co.uk" rel="external nofollow" class="url">Adam Rush</a></cite>
 				<span class="says">
 				says				</span>
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3710">29 October 2013 at 12:34</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3710">29 October 2013 at 12:34</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>Thanks for the update 😀</p>
 		</div>
 
@@ -834,7 +834,7 @@ If so, this link may help: <a href="http://www.windowsecurity.com/articles-tutor
 
 	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3718">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
 				<img alt="" src="https://2.gravatar.com/avatar/ec7435bbd5347a82fdb541b660c4d9c2?s=48&d=identicon&r=g" srcset="http://2.gravatar.com/avatar/ec7435bbd5347a82fdb541b660c4d9c2?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn">Shah</cite>
@@ -843,12 +843,12 @@ If so, this link may help: <a href="http://www.windowsecurity.com/articles-tutor
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3718">30 December 2013 at 06:20</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3718">30 December 2013 at 06:20</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>excellent, with little tuning like folder security, firewall etc anyway gr8 work thnx a lot 🙂</p>
 		</div>
 
@@ -859,7 +859,7 @@ If so, this link may help: <a href="http://www.windowsecurity.com/articles-tutor
 
 	<li class="comment even thread-even depth-1" id="comment-4170">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
 				<img alt="" src="https://0.gravatar.com/avatar/948b26c45f4221975a142296fc802a59?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/948b26c45f4221975a142296fc802a59?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="https://plus.google.com/106881504072599625853" rel="external nofollow" class="url">jorma Spaziano</a></cite>
@@ -868,12 +868,12 @@ If so, this link may help: <a href="http://www.windowsecurity.com/articles-tutor
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-4170">2 May 2014 at 19:44</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-4170">2 May 2014 at 19:44</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>Thank you SO much! I have no idea how you guys figured this out but thank you for sharing!</p>
 		</div>
 
@@ -884,7 +884,7 @@ If so, this link may help: <a href="http://www.windowsecurity.com/articles-tutor
 
 	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-7984">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
 				<img alt="" src="https://1.gravatar.com/avatar/7f2a6a1046bb981f018f5b7e2be3e511?s=48&d=identicon&r=g" srcset="http://1.gravatar.com/avatar/7f2a6a1046bb981f018f5b7e2be3e511?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn">michael</cite>
@@ -893,12 +893,12 @@ If so, this link may help: <a href="http://www.windowsecurity.com/articles-tutor
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-7984">17 July 2014 at 17:47</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-7984">17 July 2014 at 17:47</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>This walkthrough was THE BEST one I found. There was a bit of a learning curve for me as I was a beginner but I got it to work and it is amazing! 57 computers all accessible from one place. Makes my job ALOT easier.</p>
 		</div>
 
@@ -907,21 +907,21 @@ If so, this link may help: <a href="http://www.windowsecurity.com/articles-tutor
 
 		<ul class="children"><li class="comment byuser comment-author-adminn101 bypostauthor even depth-2" id="comment-11799">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
-				<img alt="" src="https://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://thehypepipe.co.uk" rel="external nofollow" class="url">Adam Rush</a></cite>
+				<img alt="" src="https://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://www.virtuallyimpossible.co.uk" rel="external nofollow" class="url">Adam Rush</a></cite>
 				<span class="says">
 				says				</span>
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-11799">19 August 2014 at 19:45</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-11799">19 August 2014 at 19:45</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>Glad to hear it helped you Michael 😀</p>
 		</div>
 
@@ -933,7 +933,7 @@ If so, this link may help: <a href="http://www.windowsecurity.com/articles-tutor
 
 	<li class="comment odd alt thread-even depth-1" id="comment-59474">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
 				<img alt="" src="https://2.gravatar.com/avatar/b88f1464ecd55c6bed66c9a77a733b03?s=48&d=identicon&r=g" srcset="http://2.gravatar.com/avatar/b88f1464ecd55c6bed66c9a77a733b03?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn">Craig</cite>
@@ -942,12 +942,12 @@ If so, this link may help: <a href="http://www.windowsecurity.com/articles-tutor
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-59474">10 March 2015 at 13:16</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-59474">10 March 2015 at 13:16</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>I also recommend watching this Youtube <a href="https://www.youtube.com/watch?v=jXAz6vrWMP0" rel="nofollow">https://www.youtube.com/watch?v=jXAz6vrWMP0</a></p>
 		</div>
 
@@ -958,7 +958,7 @@ If so, this link may help: <a href="http://www.windowsecurity.com/articles-tutor
 
 	<li class="comment even thread-odd thread-alt depth-1" id="comment-70453">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
 				<img alt="" src="https://0.gravatar.com/avatar/cde120dd45cc30b8b054dbe9dd98b2f4?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/cde120dd45cc30b8b054dbe9dd98b2f4?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn">Alexandr</cite>
@@ -967,12 +967,12 @@ If so, this link may help: <a href="http://www.windowsecurity.com/articles-tutor
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-70453">16 September 2015 at 04:37</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-70453">16 September 2015 at 04:37</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>Great article! thank you!</p>
 		</div>
 
@@ -981,21 +981,21 @@ If so, this link may help: <a href="http://www.windowsecurity.com/articles-tutor
 
 		<ul class="children"><li class="comment byuser comment-author-adminn101 bypostauthor odd alt depth-2" id="comment-70765">
 
-		
+
 		<div class="comment-header">
 			<div class="comment-author vcard">
-				<img alt="" src="https://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://thehypepipe.co.uk" rel="external nofollow" class="url">Adam Rush</a></cite>
+				<img alt="" src="https://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=48&d=identicon&r=g" srcset="http://0.gravatar.com/avatar/0dfab9c4912eb5cdb4746631315cfa29?s=96&d=identicon&r=g 2x" class="avatar avatar-48 photo" height="48" width="48"><cite class="fn"><a href="http://www.virtuallyimpossible.co.uk" rel="external nofollow" class="url">Adam Rush</a></cite>
 				<span class="says">
 				says				</span>
 			</div>
 
 			<div class="comment-meta commentmetadata">
-				<a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-70765">26 September 2015 at 13:37</a>
+				<a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-70765">26 September 2015 at 13:37</a>
 							</div>
 		</div>
 
 		<div class="comment-content">
-			
+
 			<p>Glad to hear it’s still helping people!</p>
 		</div>
 
@@ -1008,62 +1008,62 @@ If so, this link may help: <a href="http://www.windowsecurity.com/articles-tutor
 				<div id="div-comment-3697" class="comment-body">
 				<div class="comment-author vcard">
 						<cite class="fn"><a href="http://www.edugeek.net/forums/network-classroom-management/123808-teamviewer-alternative.html#post1073727" rel="external nofollow" class="url">Teamviewer Alternative</a></cite> <span class="says">says:</span>		</div>
-		
-		<div class="comment-meta commentmetadata"><a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3697">
+
+		<div class="comment-meta commentmetadata"><a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/#comment-3697">
 			18 October 2013 at 14:14				</a>
 						</div>
 
 		<p>[…] UltraVNC via Group Policy – cost was free (other than my time!)  I followed a guide by Adam Rush (Deploying UltraVNC within an Active Directory environment using Group Policy – Virtually Impossible)  …But had to carry out some additional steps for firewall exceptions and also to ensure […]</p>
 
-		
+
 				</div>
 				</li>
 </ol></div></div><div id="sidebar" class="sidebar widget-area"><div id="wpcom_social_media_icons_widget-3" class="widget widget_wpcom_social_media_icons_widget"><div class="widget-wrap"><h4 class="widget-title widgettitle">Social</h4>
 <ul><li><a href="https://twitter.com/adamrushuk/" class="genericon genericon-twitter" target="_blank"><span class="screen-reader-text">View adamrushuk’s profile on Twitter</span></a></li><li><a href="https://www.linkedin.com/in/adamrushuk/" class="genericon genericon-linkedin" target="_blank"><span class="screen-reader-text">View adamrushuk’s profile on LinkedIn</span></a></li><li><a href="https://github.com/adamrushuk/" class="genericon genericon-github" target="_blank"><span class="screen-reader-text">View adamrushuk’s profile on GitHub</span></a></li></ul></div></div>
 <div id="media_image-2" class="widget widget_media_image"><div class="widget-wrap"><h4 class="widget-title widgettitle">Certifications</h4>
-<img width="181" height="300" src="http://thehypepipe.co.uk/wp-content/uploads/2016/07/cert-logos-181x300.png" class="image wp-image-4877 alignnone attachment-0x0 size-0x0" alt="Certifications" style="max-width: 100%; height: auto;" srcset="https://i0.wp.com/www.virtuallyimpossible.co.uk/wp-content/uploads/2016/07/cert-logos.png?resize=181%2C300 181w,https://i0.wp.com/www.virtuallyimpossible.co.uk/wp-content/uploads/2016/07/cert-logos.png?w=255 255w" sizes="(max-width: 181px) 100vw, 181px"></div></div>
+<img width="181" height="300" src="http://www.virtuallyimpossible.co.uk/wp-content/uploads/2016/07/cert-logos-181x300.png" class="image wp-image-4877 alignnone attachment-0x0 size-0x0" alt="Certifications" style="max-width: 100%; height: auto;" srcset="https://i0.wp.com/www.virtuallyimpossible.co.uk/wp-content/uploads/2016/07/cert-logos.png?resize=181%2C300 181w,https://i0.wp.com/www.virtuallyimpossible.co.uk/wp-content/uploads/2016/07/cert-logos.png?w=255 255w" sizes="(max-width: 181px) 100vw, 181px"></div></div>
 		<div id="recent-posts-2" class="widget widget_recent_entries"><div class="widget-wrap">		<h4 class="widget-title widgettitle">Recent Posts</h4>
 		<ul><li>
-					<a href="http://thehypepipe.co.uk/new-blog-github-pages-jekyll/">New Blog – GitHub Pages and Jekyll</a>
+					<a href="http://www.virtuallyimpossible.co.uk/new-blog-github-pages-jekyll/">New Blog – GitHub Pages and Jekyll</a>
 									</li>
 											<li>
-					<a href="http://thehypepipe.co.uk/commands-troubleshoot-connectivity-vshield-edge/">Commands to troubleshoot connectivity through a vShield Edge</a>
+					<a href="http://www.virtuallyimpossible.co.uk/commands-troubleshoot-connectivity-vshield-edge/">Commands to troubleshoot connectivity through a vShield Edge</a>
 									</li>
 											<li>
-					<a href="http://thehypepipe.co.uk/commands-troubleshoot-connectivity-cisco-asa/">Commands to troubleshoot connectivity through a Cisco ASA</a>
+					<a href="http://www.virtuallyimpossible.co.uk/commands-troubleshoot-connectivity-cisco-asa/">Commands to troubleshoot connectivity through a Cisco ASA</a>
 									</li>
 											<li>
-					<a href="http://thehypepipe.co.uk/virtualisation-podcasts-keeping-finger-pulse/">Virtualisation Podcasts – Keeping your finger on the Pulse</a>
+					<a href="http://www.virtuallyimpossible.co.uk/virtualisation-podcasts-keeping-finger-pulse/">Virtualisation Podcasts – Keeping your finger on the Pulse</a>
 									</li>
 											<li>
-					<a href="http://thehypepipe.co.uk/find-upgradeable-vshield-edges/">Find Upgradeable vShield Edges</a>
+					<a href="http://www.virtuallyimpossible.co.uk/find-upgradeable-vshield-edges/">Find Upgradeable vShield Edges</a>
 									</li>
 					</ul></div></div>
 <div id="wppp-2" class="widget widget_wppp"><div class="widget-wrap"><h4 class="widget-title widgettitle">Popular Posts</h4>
 
-<ul class="wppp_list"><li><a href="http://thehypepipe.co.uk/when-good-domain-controllers-go-bad/" title="When good Domain Controllers go bad!">When good Domain Controllers go bad!</a></li>
-	<li><a href="http://thehypepipe.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/" title="Deploying UltraVNC within an Active Directory environment using Group Policy">Deploying UltraVNC within an Active Directory environment using Group Policy</a></li>
-	<li><a href="http://thehypepipe.co.uk/install-and-configure-profile-management-for-citrix-xenapp-6-5/" title="Install and Configure Profile Management for Citrix XenApp 6.5">Install and Configure Profile Management for Citrix XenApp 6.5</a></li>
-	<li><a href="http://thehypepipe.co.uk/configure-web-interface-for-citrix-xenapp-6-5/" title="Configure Web Interface for Citrix XenApp 6.5">Configure Web Interface for Citrix XenApp 6.5</a></li>
-	<li><a href="http://thehypepipe.co.uk/configure-pass-through-authentication-for-citrix-xenapp-6-5/" title="Configure Pass-through Authentication for Citrix XenApp 6.5">Configure Pass-through Authentication for Citrix XenApp 6.5</a></li>
+<ul class="wppp_list"><li><a href="http://www.virtuallyimpossible.co.uk/when-good-domain-controllers-go-bad/" title="When good Domain Controllers go bad!">When good Domain Controllers go bad!</a></li>
+	<li><a href="http://www.virtuallyimpossible.co.uk/deploying-ultravnc-within-an-active-directory-environment-using-group-policy/" title="Deploying UltraVNC within an Active Directory environment using Group Policy">Deploying UltraVNC within an Active Directory environment using Group Policy</a></li>
+	<li><a href="http://www.virtuallyimpossible.co.uk/install-and-configure-profile-management-for-citrix-xenapp-6-5/" title="Install and Configure Profile Management for Citrix XenApp 6.5">Install and Configure Profile Management for Citrix XenApp 6.5</a></li>
+	<li><a href="http://www.virtuallyimpossible.co.uk/configure-web-interface-for-citrix-xenapp-6-5/" title="Configure Web Interface for Citrix XenApp 6.5">Configure Web Interface for Citrix XenApp 6.5</a></li>
+	<li><a href="http://www.virtuallyimpossible.co.uk/configure-pass-through-authentication-for-citrix-xenapp-6-5/" title="Configure Pass-through Authentication for Citrix XenApp 6.5">Configure Pass-through Authentication for Citrix XenApp 6.5</a></li>
 </ul></div></div>
 <div id="tag_cloud-2" class="widget widget_tag_cloud"><div class="widget-wrap"><h4 class="widget-title widgettitle">Tags</h4>
-<div class="tagcloud"><a href="http://thehypepipe.co.uk/tag/active-directory/" class="tag-cloud-link tag-link-8 tag-link-position-1" style="font-size: 19.2pt;" aria-label="Active Directory (15 items)">Active Directory</a>
-<a href="http://thehypepipe.co.uk/tag/backup/" class="tag-cloud-link tag-link-27 tag-link-position-2" style="font-size: 17.333333333333pt;" aria-label="Backup (11 items)">Backup</a>
-<a href="http://thehypepipe.co.uk/tag/batch-file/" class="tag-cloud-link tag-link-9 tag-link-position-3" style="font-size: 12.666666666667pt;" aria-label="Batch file (5 items)">Batch file</a>
-<a href="http://thehypepipe.co.uk/tag/certificates/" class="tag-cloud-link tag-link-79 tag-link-position-4" style="font-size: 11.422222222222pt;" aria-label="Certificates (4 items)">Certificates</a>
-<a href="http://thehypepipe.co.uk/tag/cisco-ios/" class="tag-cloud-link tag-link-10 tag-link-position-5" style="font-size: 12.666666666667pt;" aria-label="Cisco IOS (5 items)">Cisco IOS</a>
-<a href="http://thehypepipe.co.uk/tag/clustering/" class="tag-cloud-link tag-link-89 tag-link-position-6" style="font-size: 9.8666666666667pt;" aria-label="Clustering (3 items)">Clustering</a>
-<a href="http://thehypepipe.co.uk/tag/command/" class="tag-cloud-link tag-link-55 tag-link-position-7" style="font-size: 12.666666666667pt;" aria-label="command (5 items)">command</a>
-<a href="http://thehypepipe.co.uk/tag/deployment/" class="tag-cloud-link tag-link-69 tag-link-position-8" style="font-size: 11.422222222222pt;" aria-label="Deployment (4 items)">Deployment</a>
-<a href="http://thehypepipe.co.uk/tag/disaster-recovery/" class="tag-cloud-link tag-link-28 tag-link-position-9" style="font-size: 15.311111111111pt;" aria-label="Disaster Recovery (8 items)">Disaster Recovery</a>
-<a href="http://thehypepipe.co.uk/tag/error/" class="tag-cloud-link tag-link-22 tag-link-position-10" style="font-size: 17.8pt;" aria-label="Error (12 items)">Error</a>
-<a href="http://thehypepipe.co.uk/tag/event-id/" class="tag-cloud-link tag-link-21 tag-link-position-11" style="font-size: 8pt;" aria-label="Event ID (2 items)">Event ID</a>
-<a href="http://thehypepipe.co.uk/tag/event-log/" class="tag-cloud-link tag-link-23 tag-link-position-12" style="font-size: 12.666666666667pt;" aria-label="Event Log (5 items)">Event Log</a>
-<a href="http://thehypepipe.co.uk/tag/exchange-2007/" class="tag-cloud-link tag-link-58 tag-link-position-13" style="font-size: 11.422222222222pt;" aria-label="Exchange 2007 (4 items)">Exchange 2007</a>
-<a href="http://thehypepipe.co.uk/tag/exchange-2010/" class="tag-cloud-link tag-link-59 tag-link-position-14" style="font-size: 14.533333333333pt;" aria-label="Exchange 2010 (7 items)">Exchange 2010</a>
-<a href="http://thehypepipe.co.uk/tag/gpo/" class="tag-cloud-link tag-link-24 tag-link-position-15" style="font-size: 18.422222222222pt;" aria-label="GPO (13 items)">GPO</a>
-<a href="http://thehypepipe.co.uk/tag/hp/" class="tag-cloud-link tag-link-40 tag-link-position-16" style="font-size: 13.755555555556pt;" aria-label="HP (6 items)">HP</a>
+<div class="tagcloud"><a href="http://www.virtuallyimpossible.co.uk/tag/active-directory/" class="tag-cloud-link tag-link-8 tag-link-position-1" style="font-size: 19.2pt;" aria-label="Active Directory (15 items)">Active Directory</a>
+<a href="http://www.virtuallyimpossible.co.uk/tag/backup/" class="tag-cloud-link tag-link-27 tag-link-position-2" style="font-size: 17.333333333333pt;" aria-label="Backup (11 items)">Backup</a>
+<a href="http://www.virtuallyimpossible.co.uk/tag/batch-file/" class="tag-cloud-link tag-link-9 tag-link-position-3" style="font-size: 12.666666666667pt;" aria-label="Batch file (5 items)">Batch file</a>
+<a href="http://www.virtuallyimpossible.co.uk/tag/certificates/" class="tag-cloud-link tag-link-79 tag-link-position-4" style="font-size: 11.422222222222pt;" aria-label="Certificates (4 items)">Certificates</a>
+<a href="http://www.virtuallyimpossible.co.uk/tag/cisco-ios/" class="tag-cloud-link tag-link-10 tag-link-position-5" style="font-size: 12.666666666667pt;" aria-label="Cisco IOS (5 items)">Cisco IOS</a>
+<a href="http://www.virtuallyimpossible.co.uk/tag/clustering/" class="tag-cloud-link tag-link-89 tag-link-position-6" style="font-size: 9.8666666666667pt;" aria-label="Clustering (3 items)">Clustering</a>
+<a href="http://www.virtuallyimpossible.co.uk/tag/command/" class="tag-cloud-link tag-link-55 tag-link-position-7" style="font-size: 12.666666666667pt;" aria-label="command (5 items)">command</a>
+<a href="http://www.virtuallyimpossible.co.uk/tag/deployment/" class="tag-cloud-link tag-link-69 tag-link-position-8" style="font-size: 11.422222222222pt;" aria-label="Deployment (4 items)">Deployment</a>
+<a href="http://www.virtuallyimpossible.co.uk/tag/disaster-recovery/" class="tag-cloud-link tag-link-28 tag-link-position-9" style="font-size: 15.311111111111pt;" aria-label="Disaster Recovery (8 items)">Disaster Recovery</a>
+<a href="http://www.virtuallyimpossible.co.uk/tag/error/" class="tag-cloud-link tag-link-22 tag-link-position-10" style="font-size: 17.8pt;" aria-label="Error (12 items)">Error</a>
+<a href="http://www.virtuallyimpossible.co.uk/tag/event-id/" class="tag-cloud-link tag-link-21 tag-link-position-11" style="font-size: 8pt;" aria-label="Event ID (2 items)">Event ID</a>
+<a href="http://www.virtuallyimpossible.co.uk/tag/event-log/" class="tag-cloud-link tag-link-23 tag-link-position-12" style="font-size: 12.666666666667pt;" aria-label="Event Log (5 items)">Event Log</a>
+<a href="http://www.virtuallyimpossible.co.uk/tag/exchange-2007/" class="tag-cloud-link tag-link-58 tag-link-position-13" style="font-size: 11.422222222222pt;" aria-label="Exchange 2007 (4 items)">Exchange 2007</a>
+<a href="http://www.virtuallyimpossible.co.uk/tag/exchange-2010/" class="tag-cloud-link tag-link-59 tag-link-position-14" style="font-size: 14.533333333333pt;" aria-label="Exchange 2010 (7 items)">Exchange 2010</a>
+<a href="http://www.virtuallyimpossible.co.uk/tag/gpo/" class="tag-cloud-link tag-link-24 tag-link-position-15" style="font-size: 18.422222222222pt;" aria-label="GPO (13 items)">GPO</a>
+<a href="http://www.virtuallyimpossible.co.uk/tag/hp/" class="tag-cloud-link tag-link-40 tag-link-position-16" style="font-size: 13.755555555556pt;" aria-label="HP (6 items)">HP</a>
 <a href="http://thehypepipe.co.uk/tag/installation/" class="tag-cloud-link tag-link-76 tag-link-position-17" style="font-size: 20.755555555556pt;" aria-label="Installation (19 items)">Installation</a>
 <a href="http://thehypepipe.co.uk/tag/iops/" class="tag-cloud-link tag-link-71 tag-link-position-18" style="font-size: 8pt;" aria-label="IOPS (2 items)">IOPS</a>
 <a href="http://thehypepipe.co.uk/tag/iscsi/" class="tag-cloud-link tag-link-88 tag-link-position-19" style="font-size: 12.666666666667pt;" aria-label="iSCSI (5 items)">iSCSI</a>

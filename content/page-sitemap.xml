@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="//thehypepipe.co.uk/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>http://thehypepipe.co.uk/</loc>
+		<loc>http://www.virtuallyimpossible.co.uk/</loc>
 	</url>
 	<url>
-		<loc>http://thehypepipe.co.uk/contact/</loc>
+		<loc>http://www.virtuallyimpossible.co.uk/contact/</loc>
 		<lastmod>2013-06-16T13:56:41+00:00</lastmod>
 	</url>
 	<url>
-		<loc>http://thehypepipe.co.uk/about/</loc>
+		<loc>http://www.virtuallyimpossible.co.uk/about/</loc>
 		<lastmod>2017-12-30T20:41:58+00:00</lastmod>
 	</url>
 </urlset>
