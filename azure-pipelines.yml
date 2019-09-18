@@ -51,7 +51,7 @@ stages:
           -DomainFqdn $(DOMAIN_FQDN)
         azurePowerShellVersion: LatestVersion
 
-    - task: AzureFileCopy@3
+    - task: AzureFileCopy@2
       inputs:
         SourcePath: $(CONTENT_RELATIVE_PATH)
         azureSubscription: $(SERVICE_CONNECTION)
