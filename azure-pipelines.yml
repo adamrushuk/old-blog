@@ -56,7 +56,7 @@ stages:
       inputs:
         azureSubscription: $(SERVICE_CONNECTION)
         scriptLocation: 'inlineScript'
-        inlineScript: az storage blob upload-batch --account-name "$(STORAGE_ACCOUNT_NAME)" --source "$(BUILD_SOURCESDIRECTORY)/$(CONTENT_RELATIVE_PATH)" --destination '$web'
+        inlineScript: az storage blob upload-batch --account-name "$(STORAGE_ACCOUNT_NAME)" --source "$(CONTENT_RELATIVE_PATH)" --destination '$web'
 
     - task: PowerShell@2
       displayName: "PowerShell Script: Update DNS A Record"
