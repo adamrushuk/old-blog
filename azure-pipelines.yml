@@ -51,6 +51,14 @@ stages:
           -DomainFqdn $(DOMAIN_FQDN)
         azurePowerShellVersion: LatestVersion
 
+    - task: AzureFileCopy@3
+      inputs:
+        SourcePath: $(CONTENT_RELATIVE_PATH)
+        azureSubscription: $(SERVICE_CONNECTION)
+        Destination: 'AzureBlob'
+        storage: $(STORAGE_ACCOUNT_NAME)
+        ContainerName: '$web'
+
     - task: PowerShell@2
       displayName: "PowerShell Script: Update DNS A Record"
       inputs:

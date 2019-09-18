@@ -162,7 +162,8 @@ Write-Host "##vso[task.setvariable variable=PRIMARY_ENDPOINT]$primaryEndpointHos
 Write-Host "SUCCESS!"
 #endregion Update Pipeline Variable
 
-
+<#
+# TODO Test AzCopy Task: https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/deploy/azure-file-copy?view=azure-devops
 #region Upload Static Website Content
 ## Test single file
 # $contentFiles = Get-ChildItem -Path $ContentRelativePath/* -Include "index.html"
@@ -192,3 +193,4 @@ foreach ($contentFile in $contentFiles) {
 
 Write-Host "SUCCESS!"
 #endregion Upload Static Website Content
+#>
