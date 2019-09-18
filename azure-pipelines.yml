@@ -51,13 +51,16 @@ stages:
           -DomainFqdn $(DOMAIN_FQDN)
         azurePowerShellVersion: LatestVersion
 
-    - task: AzureFileCopy@2
+    - task: AzureCLI@1
+      displayName: "Azure CLI: Upload blob content"
       inputs:
-        SourcePath: $(CONTENT_RELATIVE_PATH)
         azureSubscription: $(SERVICE_CONNECTION)
-        Destination: 'AzureBlob'
-        storage: $(STORAGE_ACCOUNT_NAME)
-        ContainerName: '$web'
+        scriptLocation: 'inlineScript'
+        inlineScript: >
+          az storage blob upload-batch
+          --destination '$web'
+          --account-name "$(STORAGE_ACCOUNT_NAME)"
+          --source "$(CONTENT_RELATIVE_PATH)/*"
 
     - task: PowerShell@2
       displayName: "PowerShell Script: Update DNS A Record"
@@ -83,7 +86,7 @@ stages:
            -WaitForStatusCode 400
            -TimeoutSeconds 240
         pwsh: true
-      continueOnError: true
+      # continueOnError: true
 
     - task: AzurePowerShell@4
       displayName: "Azure PowerShell Script: Set Custom Domain"
@@ -95,4 +98,4 @@ stages:
           -StorageAccountName $(STORAGE_ACCOUNT_NAME)
           -DomainFqdn $(DOMAIN_FQDN)
         azurePowerShellVersion: LatestVersion
-      condition: succeededOrFailed()
+      # condition: succeededOrFailed()
