@@ -14,7 +14,7 @@ trigger:
     - master
 
 variables:
-  system.debug: true
+  system.debug: false
 
   # Main vars
   VM_IMAGE: ubuntu-16.04
@@ -50,6 +50,14 @@ stages:
           -ContentRelativePath $(CONTENT_RELATIVE_PATH)
           -DomainFqdn $(DOMAIN_FQDN)
         azurePowerShellVersion: LatestVersion
+
+    - task: AzureCLI@1
+      displayName: "Azure CLI: Output ENV vars"
+      inputs:
+        azureSubscription: $(SERVICE_CONNECTION)
+        scriptLocation: 'inlineScript'
+        inlineScript: >
+          env
 
     - task: AzureCLI@1
       displayName: "Azure CLI: Upload blob content"
